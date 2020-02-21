@@ -33,5 +33,6 @@ group :development do
 end
 
 group :production do
+  gem 'bleib'
   gem 'redis-rack-cache'
 end
