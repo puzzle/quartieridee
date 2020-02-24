@@ -57,11 +57,13 @@ Rails.application.configure do
   config.log_tags = [ :request_id ]
 
   # Use a different cache store in production.
-  config.cache_store = :redis_store, "redis://redis:6379/0/cache", { expires_in: 90.minutes }
+  memcached_host = ENV['RAILS_MEMCACHED_HOST'] || 'localhost'
+  memcached_port = ENV['RAILS_MEMCACHED_PORT'] || '11211'
+  config.cache_store = :dalli_store, "#{memcached_host}:#{memcached_port}"
 
   # Use a real queuing backend for Active Job (and separate queues per environment)
-  # config.active_job.queue_adapter     = :resque
-  # config.active_job.queue_name_prefix = "quartieridee_#{Rails.env}"
+  config.active_job.queue_adapter     = :delayed_job
+  config.active_job.queue_name_prefix = "quartieridee_#{Rails.env}"
 
   config.action_mailer.perform_caching = false
 
@@ -101,9 +103,4 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
-
-  config.action_dispatch.rack_cache = {
-    metastore: 'redis://redis:6379/1/metastore',
-    entitystore: 'redis://redis:6379/1/entitystore'
-  }
 end

@@ -10,12 +10,13 @@ gem 'decidim', '0.20.0'
 
 gem 'bootsnap', '~> 1.3'
 
+gem 'dalli'
+gem 'delayed_cron_job'
+gem 'delayed_job_active_record'
+gem 'faker', '~> 1.9'
+gem 'pry-rails'
 gem 'puma', '~> 3.12.2'
 gem 'uglifier', '~> 4.1'
-gem 'pry-rails'
-gem 'redis-rails'
-
-gem 'faker', '~> 1.9'
 
 group :development, :test do
   gem 'byebug', '~> 11.0', platform: :mri
@@ -34,5 +35,4 @@ end
 
 group :production do
   gem 'bleib'
-  gem 'redis-rack-cache'
 end

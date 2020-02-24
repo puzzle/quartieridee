@@ -1,7 +1,34 @@
-# Quartieridee::Application.config.session_store :redis_store,
-#   servers: ['redis://localhost:6379/0/session'],
-#   expire_after: 90.minutes,
-#   key: "_#{Rails.application.class.parent_name.downcase}_session",
-#   threadsafe: true,
-#   signed: true,
-#   secure: true
+# frozen_string_literal: true
+
+# Be sure to restart your server when you modify this file.
+require 'action_dispatch/middleware/session/dalli_store'
+
+Rails.application.config.session_store(
+  :dalli_store,
+  memcache_server: ['127.0.0.1'],
+  namespace:       'sessions',
+  key:             '_session',
+  expire_after:    30.minutes
+)
+
+def dalli_reachable?
+  Rails.env.production? && Rails.cache.dalli.stats.values.any?
+end
+
+def memcache_configured?
+  if Rails.env.production?
+    ENV['RAILS_MEMCACHED_HOST'].present?
+  elsif Rails.env.development?
+    false
+  else
+    false
+  end
+end
+
+# We expect memcache to work in production.
+# Prevents an error with the rails console on OpenShift
+if memcache_configured? &&
+   !Rails.env.production? &&
+   !dalli_reachable?
+  raise 'As CSRF tokens are read from cache, we require a memcache instance to start'
+end
