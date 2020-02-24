@@ -16,6 +16,7 @@ gem 'delayed_job_active_record'
 gem 'faker', '~> 1.9'
 gem 'pry-rails'
 gem 'puma', '~> 3.12.2'
+gem 'prometheus_exporter'
 gem 'uglifier', '~> 4.1'
 
 group :development, :test do
