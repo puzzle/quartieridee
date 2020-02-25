@@ -4,22 +4,22 @@
 require 'action_dispatch/middleware/session/dalli_store'
 
 Rails.application.config.session_store(
-  :dalli_store,
+  ActionDispatch::Session::CacheStore,
   memcache_server: ['127.0.0.1'],
   namespace:       'sessions',
   key:             '_session',
-  expire_after:    30.minutes
+  :expire_after => 30.minutes
 )
 
 def dalli_reachable?
-  Rails.env.production? && Rails.cache.dalli.stats.values.any?
+  Rails.cache.dalli.stats.values.any?
 end
 
 def memcache_configured?
   if Rails.env.production?
     ENV['RAILS_MEMCACHED_HOST'].present?
   elsif Rails.env.development?
-    false
+    true
   else
     false
   end
