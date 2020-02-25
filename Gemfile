@@ -11,12 +11,11 @@ gem 'decidim', '0.20.0'
 gem 'bootsnap', '~> 1.3'
 
 gem 'dalli'
-gem 'delayed_cron_job'
 gem 'delayed_job_active_record'
 gem 'faker', '~> 1.9'
+gem 'prometheus_exporter'
 gem 'pry-rails'
 gem 'puma', '~> 3.12.2'
-gem 'prometheus_exporter'
 gem 'uglifier', '~> 4.1'
 
 group :development, :test do

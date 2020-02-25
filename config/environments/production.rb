@@ -80,16 +80,6 @@ Rails.application.configure do
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
-  config.action_mailer.smtp_settings = {
-    :address        => Rails.application.secrets.smtp_address,
-    :port           => Rails.application.secrets.smtp_port,
-    :authentication => Rails.application.secrets.smtp_authentication,
-    :user_name      => Rails.application.secrets.smtp_username,
-    :password       => Rails.application.secrets.smtp_password,
-    :domain         => Rails.application.secrets.smtp_domain,
-    :enable_starttls_auto => Rails.application.secrets.smtp_starttls_auto,
-    :openssl_verify_mode => 'none'
-  }
 
   # Use a different logger for distributed setups.
   # require 'syslog/logger'
@@ -103,4 +93,32 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  # Mail Settings
+  if ENV['RAILS_MAIL_DELIVERY_CONFIG'].present?
+    case config.action_mailer.delivery_method.to_s
+    when 'smtp'
+      config.action_mailer.smtp_settings =
+        YAML.safe_load("{ #{ENV['RAILS_MAIL_DELIVERY_CONFIG']} }")
+            .symbolize_keys
+    when 'sendmail'
+      config.action_mailer.sendmail_settings =
+        YAML.safe_load("{ #{ENV['RAILS_MAIL_DELIVERY_CONFIG']} }")
+            .symbolize_keys
+    end
+  else
+    config.action_mailer.smtp_settings = { address: '127.0.0.1', port: 1025 }
+  end
+
+  # config.action_mailer.smtp_settings = {
+  #   :address        => Rails.application.secrets.smtp_address,
+  #   :port           => Rails.application.secrets.smtp_port,
+  #   :authentication => Rails.application.secrets.smtp_authentication,
+  #   :user_name      => Rails.application.secrets.smtp_username,
+  #   :password       => Rails.application.secrets.smtp_password,
+  #   :domain         => Rails.application.secrets.smtp_domain,
+  #   :enable_starttls_auto => Rails.application.secrets.smtp_starttls_auto,
+  #   :openssl_verify_mode => 'none'
+  # }
+
 end
