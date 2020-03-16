@@ -1,26 +1,74 @@
-version: '3'
+version: '3.4'
 services:
-  app:
-    image: decidim/decidim:0.20.0
+  app: &app
+    build:
+      context: .
+      dockerfile: ./.docker/Dockerfile
+      target: dev
     volumes:
-      - .:/app
+      - .:/usr/src/app
       - bundle:/usr/local/bundle
       - node_modules:/app/node_modules
+      - db-init:/db-init
+    depends_on:
+      - pg
+      - cache
+      - mail
+      - worker
     environment:
       - PORT=3000
-      - DATABASE_HOST=pg
-      - DATABASE_USERNAME=postgres
+      - RAILS_DB_HOST=pg
       - RAILS_ENV=development
+      - RAILS_MEMCACHED_HOST=cache
+      - RAILS_MAIL_DELIVERY_CONFIG=address:mail,port:1025
+    env_file:
+      - .env.local
     ports:
       - 3000:3000
-    links:
-      - pg
     command: bundle exec puma
+    entrypoint: ./.docker/entrypoint.sh
   pg:
     image: postgres
+    environment:
+      - POSTGRES_USER=quartieridee
+      - POSTGRES_PASSWORD=quartieridee
+      - POSTGRES_DB=quartieridee_development
+    ports:
+      - 5432:5432
     volumes:
       - pg-data:/var/lib/postgresql/data
+  cache:
+    image: memcached:1.5-alpine
+    command: [ memcached, -l, '0.0.0.0', -p, '11211' ]
+
+  adminer:
+    image: adminer
+    ports:
+      - '8080:8080'
+    links:
+      - pg:db
+    depends_on:
+      - pg
+
+  mail:
+    image: schickling/mailcatcher:latest
+    ports:
+      - '1080:1080'
+  worker:
+    <<: *app
+    depends_on: []
+    ports: []
+    entrypoint: []
+    command: [ rake, 'jobs:work' ]
+  ruby:
+    build:
+      context: .
+      dockerfile: ./.docker/Dockerfile
+      target: dev
+    command: []
+
 volumes:
   node_modules: {}
   bundle: {}
   pg-data: {}
+  db-init: {}

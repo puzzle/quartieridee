@@ -760,6 +760,7 @@ de:
           fields:
             created_at: Erstellt am
             smtp_settings: SMTP Einstellungen
+            omniauth_settings: Omniauth Einstellungen
       organizations:
         create:
           error: Beim Erstellen der neuen Organisation ist ein Fehler aufgetreten.
@@ -768,6 +769,8 @@ de:
         new:
           reference_prefix_hint: Das Referenzpräfix wird zur eindeutigen Identifizierung von Ressourcen in allen Organisationen verwendet
           secondary_hosts_hint: Geben Sie jeden Host auf einer separaten Zeile an
+        omniauth_settings:
+          enabled: Omniauth aktiviert
         update:
           error: Beim Bearbeiten dieser Organisation ist ein Fehler aufgetreten.
           success: Die Organisation wurde erfolgreich gespeichert.
