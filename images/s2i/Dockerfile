@@ -4,6 +4,8 @@ USER root
 
 ADD ./root /
 
+RUN bash -c "gem install bundler -v \"$(grep -A 1 'BUNDLED WITH' /opt/app-root/src/Gemfile.lock | tail -n 1)\""
+
 RUN \
   set -x && \
   ## FIXME: why does ruby-25 need to be disabled for the build to work
