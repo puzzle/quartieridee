@@ -1,7 +1,7 @@
 <% if Rails.env.production? %>
   <% if ENV.fetch('SENTRY_CURRENT_ENV') == 'production' %>
-    <% render 'matomo_production'>
+    <% render 'matomo_production' %>
   <% else %>
-    <% render 'matomo_integration'>
+    <% render 'matomo_integration' %>
   <% end %>
 <% end %>

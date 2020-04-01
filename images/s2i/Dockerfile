@@ -9,7 +9,8 @@ RUN bash -c "gem install bundler -v \"$(grep -A 1 'BUNDLED WITH' /opt/app-root/s
 RUN \
   set -x && \
   ## FIXME: why does ruby-25 need to be disabled for the build to work
-  yum --disablerepo=cbs.centos.org_repos_sclo7-rh-ruby25-rh-candidate_x86_64_os_ install -y \
+  yum-config-manager --disable cbs.centos.org_repos_sclo7-rh-ruby25-rh-candidate_x86_64_os_ && \
+  yum  install -y \
   # for active storage gem
   ImageMagick poppler libpoppler libicu-devel && \
   # Call restore-artifacts sscript when assembling
