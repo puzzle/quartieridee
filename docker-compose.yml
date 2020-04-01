@@ -1,7 +1,10 @@
-version: '3'
+version: '3.4'
 services:
-  app:
-    build: ./.docker
+  app: &app
+    build:
+      context: .
+      dockerfile: ./.docker/Dockerfile
+      target: dev
     volumes:
       - .:/usr/src/app
       - bundle:/usr/local/bundle
@@ -9,15 +12,16 @@ services:
     depends_on:
       - pg
       - cache
+      - mail
+      - worker
     environment:
       - PORT=3000
       - RAILS_DB_HOST=pg
       - RAILS_ENV=development
       - RAILS_MEMCACHED_HOST=cache
+      - RAILS_MAIL_DELIVERY_CONFIG=address:mail,port:1025
     ports:
       - 3000:3000
-    links:
-      - pg
     command: bundle exec puma
     entrypoint: ./.docker/entrypoint.sh
   pg:
@@ -26,13 +30,28 @@ services:
       - POSTGRES_USER=quartieridee
       - POSTGRES_PASSWORD=7UhEIvi9wFymva3
       - POSTGRES_DB=quartieridee_development
+    ports:
+      - 5432:5432
     volumes:
       - pg-data:/var/lib/postgresql/data
   cache:
     image: memcached:1.5-alpine
     command: [ memcached, -l, '0.0.0.0', -p, '11211' ]
+  mail:
+    image: schickling/mailcatcher:latest
+    ports:
+      - '1080:1080'
+  worker:
+    <<: *app
+    depends_on: []
+    ports: []
+    entrypoint: []
+    command: [ rake, 'jobs:work' ]
   ruby:
-    build: .
+    build:
+      context: .
+      dockerfile: ./.docker/Dockerfile
+      target: dev
     command: []
 volumes:
   node_modules: {}

@@ -9,8 +9,8 @@
 #
 # Also we don't use -onbuild as they're deprecated
 # https://github.com/docker-library/official-images/issues/2076
-FROM ruby:2.6.3
-LABEL maintainer="hola@decidim.org"
+FROM ruby:2.6.3 as dev
+LABEL maintainer="beltrame@puzzle.ch"
 
 # Installs system dependencies
 # One package each line and sorted alphabetically
@@ -55,7 +55,7 @@ USER decidim
 # Update system gems
 #RUN gem update --system
 
-# Copy Gemfile and install bundler dependencies
+# Copy Gemfile and install bundle dependencies
 COPY --chown=decidim:decidim Gemfile Gemfile.lock ${APP_HOME}
 ENV LANG=C.UTF-8 \
   BUNDLE_JOBS=20 \
@@ -63,11 +63,3 @@ ENV LANG=C.UTF-8 \
   PATH=${APP_HOME}/bin:${PATH}
 RUN gem install bundler:1.3.0
 RUN bundle install
-
-# We don't expose the port 3000 and we don't start the webserver as this same image
-# that we're going to use for the 'worker' service. See the docker-compose.yml file to
-# see how the commands are started.
-# EXPOSE 3000
-
-# Copy all the code to /usr/src/app
-#COPY --chown=decidim:decidim . ${APP_HOME}
