@@ -1,0 +1,83 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# The following keys must be escaped otherwise they will not be retrieved by
+# the default I18n backend:
+#
+# true, false, on, off, yes, no
+#
+# Instead, surround them with single quotes.
+#
+# en:
+#   'true': 'foo'
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+de:
+  decidim:
+    system:
+      actions:
+        confirm_destroy: Möchten Sie das wirklich löschen?
+      admins:
+        create:
+          error: Beim Erstellen des neuen Administrators ist ein Fehler aufgetreten.
+        edit:
+          update: Bearbeiten
+      menu:
+        dashboard: Dashboard
+      models:
+        admin:
+          fields:
+            created_at: Erstellt am
+            email: E-Mail
+        organization:
+          actions:
+            save_and_invite: Organisation erstellen & Admin einladen
+          fields:
+            created_at: Erstellt am
+            smtp_settings: SMTP Einstellungen
+      organizations:
+        create:
+          error: Beim Erstellen der neuen Organisation ist ein Fehler aufgetreten.
+        edit:
+          secondary_hosts_hint: Geben Sie jeden Host auf einer separaten Zeile an
+        new:
+          reference_prefix_hint: Das Referenzpräfix wird zur eindeutigen Identifizierung von Ressourcen in allen Organisationen verwendet
+          secondary_hosts_hint: Geben Sie jeden Host auf einer separaten Zeile an
+        update:
+          error: Beim Bearbeiten dieser Organisation ist ein Fehler aufgetreten.
+          success: Die Organisation wurde erfolgreich gespeichert.
+        users_registration_mode:
+          disabled: Benutzer können sich nur mit externen Konten anmelden
+          enabled: Benutzern erlauben, sich zu registrieren und sich anzumelden
+          existing: Registrationen sind deaktiviert, bestehende Benutzer können sich aber weiterhin anmelden
+      shared:
+        notices:
+          no_organization_warning_html: Sie müssen eine Organisation erstellen, um zu beginnen. Stellen Sie sicher, dass Sie unseren %{guide} lesen, bevor Sie fortfahren.
+          our_getting_started_guide: Leitfaden für Anfänger
+      titles:
+        dashboard: Dashboard
+  hello: "Hallo Welt"
+  layouts:
+    decidim:
+      cookie_warning:
+        description_html: Diese Seite verwendet Cookies. Durch die weitere Verwendung dieser Seite stimmen Sie der Verwendung von Cookies zu. Wir verwenden Matomo für anonymisierte Statistiken. Erfahren Sie mehr darüber %{link}.
+        link_label: hier
+        ok: Ich stimme zu
+  
