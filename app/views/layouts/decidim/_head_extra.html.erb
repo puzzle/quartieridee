@@ -1,7 +1,13 @@
+<!-- Matomo -->
 <% if Rails.env.production? %>
   <% if ENV.fetch('SENTRY_CURRENT_ENV') == 'production' %>
+  <!-- Production -->
     <% render 'matomo_production' %>
+  <!-- End of Production -->
   <% else %>
+    <!-- Integration -->
     <% render 'matomo_integration' %>
+    <!-- End of Integration -->
   <% end %>
 <% end %>
+<!-- End Matomo Code -->
