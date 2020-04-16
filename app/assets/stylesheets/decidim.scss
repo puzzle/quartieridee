@@ -46,4 +46,22 @@
 //   --google: #{$google};
 // }
 
+@font-face {
+  font-family: 'StyreneA';
+  font-weight: normal;
+  src:  font-url('StyreneA-Regular-Web.woff2') format('woff2'),
+        font-url('StyreneA-Regular-Web.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'StyreneA';
+  font-weight: bold;
+  src:  font-url('StyreneA-Bold-Web.woff2') format('woff2'),
+        font-url('StyreneA-Bold-Web.woff') format('woff');
+}
+
+h1, h2, h3, h4, h5, h6, .button {
+  font-family: "StyreneA", "Source Sans Pro", Helvetica, Roboto, Arial, sans-serif !important;
+}
+
 @import "decidim/application";
