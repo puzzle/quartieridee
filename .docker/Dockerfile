@@ -53,7 +53,7 @@ RUN useradd -m -s /bin/bash -g 1000 -u 1000 decidim
 USER decidim
 
 # Update system gems
-#RUN gem update --system
+RUN gem update --system
 
 # Copy Gemfile and install bundle dependencies
 COPY --chown=decidim:decidim Gemfile Gemfile.lock ${APP_HOME}
