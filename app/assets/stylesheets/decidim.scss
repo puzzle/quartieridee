@@ -79,6 +79,9 @@ h1, h2, h3, h4, h5, h6, .button {
   a {
     color: inherit !important;
   }
+  a:hover, a:focus {
+    color: var(--primary) !important;
+  }
 
   .close-button {
     color: $black !important;
@@ -108,6 +111,20 @@ h1, h2, h3, h4, h5, h6, .button {
   }
   .icon {
     color: $black !important;
+  }
+}
+
+.main-nav__link a, .card__link, .author__name {
+  color: var(--primary) !important;
+}
+
+.process_stats .process_stats-item .icon, .white-button, .white-button:hover, .supports-list .author .author__name {
+  color: var(--secondary);
+}
+
+.upcoming-events .card {
+  a {
+    color: var(--primary) !important;
   }
 }
 
