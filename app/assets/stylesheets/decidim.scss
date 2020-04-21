@@ -122,6 +122,14 @@ h1, h2, h3, h4, h5, h6, .button {
   color: var(--secondary);
 }
 
+.process-stats__data::after {
+  border-left: 2px solid var(--primary)
+}
+
+.button.secondary {
+  background-color: var(--secondary)
+}
+
 .upcoming-events .card {
   a {
     color: var(--primary) !important;
