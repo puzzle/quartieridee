@@ -60,8 +60,16 @@
         font-url('StyreneA-Bold-Web.woff') format('woff');
 }
 
+// MODIFICATIONS FOR QUARTIERIDEE
+
 h1, h2, h3, h4, h5, h6, .button {
   font-family: "StyreneA", "Source Sans Pro", Helvetica, Roboto, Arial, sans-serif !important;
 }
+
+.hero::after, .highligted-content-banner::after, .process-header__main::after, .consultations-header__main::after {
+  background-color: transparent !important;
+}
+
+// END MODIFICATIONS
 
 @import "decidim/application";
