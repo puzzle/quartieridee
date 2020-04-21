@@ -77,7 +77,7 @@ de:
   layouts:
     decidim:
       cookie_warning:
-        description_html: Diese Seite verwendet Cookies. Durch die weitere Verwendung dieser Seite stimmen Sie der Verwendung von Cookies zu. Wir verwenden Matomo für anonymisierte Statistiken. Erfahren Sie mehr darüber %{link}.
+        description_html: Diese Seite verwendet Cookies. Durch die weitere Verwendung dieser Seite stimmst Du der Verwendung von Cookies zu. Wir verwenden Matomo für anonymisierte Statistiken. Erfahre %{link} mehr darüber.
         link_label: hier
         ok: Ich stimme zu
   
