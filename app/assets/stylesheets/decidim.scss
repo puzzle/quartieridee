@@ -136,4 +136,9 @@ h1, h2, h3, h4, h5, h6, .button {
   }
 }
 
+// By default, hide maps, and show them using JS
+.google-map {
+  display: none;
+}
+
 // END MODIFICATIONS
