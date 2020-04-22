@@ -9,6 +9,7 @@ services:
       - .:/usr/src/app
       - bundle:/usr/local/bundle
       - node_modules:/app/node_modules
+      - db-init:/db-init
     depends_on:
       - pg
       - cache
@@ -28,7 +29,7 @@ services:
     image: postgres
     environment:
       - POSTGRES_USER=quartieridee
-      - POSTGRES_PASSWORD=7UhEIvi9wFymva3
+      - POSTGRES_PASSWORD=quartieridee
       - POSTGRES_DB=quartieridee_development
     ports:
       - 5432:5432
@@ -37,6 +38,16 @@ services:
   cache:
     image: memcached:1.5-alpine
     command: [ memcached, -l, '0.0.0.0', -p, '11211' ]
+
+  adminer:
+    image: adminer
+    ports:
+      - '8080:8080'
+    links:
+      - pg:db
+    depends_on:
+      - pg
+
   mail:
     image: schickling/mailcatcher:latest
     ports:
@@ -53,7 +64,9 @@ services:
       dockerfile: ./.docker/Dockerfile
       target: dev
     command: []
+
 volumes:
   node_modules: {}
   bundle: {}
   pg-data: {}
+  db-init: {}

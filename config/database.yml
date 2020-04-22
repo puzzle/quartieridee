@@ -25,7 +25,7 @@ default: &default
   host: <%= ENV.fetch('RAILS_DB_HOST') { 'localhost' } %>
   port: <%= ENV.fetch('RAILS_DB_PORT') { '5432' } %>
   username: <%= ENV.fetch('RAILS_DB_USERNAME') { 'quartieridee' } %>
-  password: <%= ENV.fetch('RAILS_DB_PASSWORD') { '7UhEIvi9wFymva3' } %>
+  password: <%= ENV.fetch('RAILS_DB_PASSWORD') { 'quartieridee' } %>
 
 development:
   <<: *default

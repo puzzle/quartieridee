@@ -49,6 +49,8 @@ WORKDIR ${APP_HOME}
 RUN addgroup --gid 1000 decidim
 RUN useradd -m -s /bin/bash -g 1000 -u 1000 decidim
 
+RUN mkdir /db-init && chown 1000 /db-init
+
 # Changes the active user on the container
 USER decidim
 
