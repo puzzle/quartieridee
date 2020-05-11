@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Quartieridee
-  class DiffCell
+  module DiffCell
 
     # Remove the HTML view mode
     def show_html_view_dropdown?
