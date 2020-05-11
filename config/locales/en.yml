@@ -79,7 +79,7 @@ en:
       home:
         footer_sub_hero:
           footer_sub_hero_body: Develop ideas. Discuss. Decide.
-          footer_sub_hero_headline: %{organization} - your participatory platform.
+          footer_sub_hero_headline: '%{organization} - your participatory platform.'
       index:
         subheading: Here you will find questions and answers about %{name}.
     participatory_processes:

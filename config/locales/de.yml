@@ -337,7 +337,7 @@ de:
       home:
         footer_sub_hero:
           footer_sub_hero_body: Ideen entwickeln. Diskutieren. Budgetieren.
-          footer_sub_hero_headline: %{organization} - deine lokale Beteiligungsplattform.
+          footer_sub_hero_headline: '%{organization} - deine lokale Beteiligungsplattform.'
       index:
         subheading: Hier findest du Fragen und Antworten rund um %{name}.
     participatory_processes:
