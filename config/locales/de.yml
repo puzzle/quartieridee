@@ -383,7 +383,7 @@ de:
           label: 'Sortieren nach:'
         show:
           edit: Kollaborativen Entwurf bearbeiten
-            info-message: Dies ist ein <strong>kollaborativer Vorschlags-Entwurf</strong>. Das bedeutet, dass du den Verfasser*innen helfen kannst, die Idee weiter zu entwickeln, indem du unten Kommentare hinzufügst oder direkt Zugriff auf den Entwurf anforderst. Sobald die Verfasser*innen dir Zugriff gewähren, kannst du Änderungen direkt am Entwurf vornehmen.
+          info-message: Dies ist ein <strong>kollaborativer Vorschlags-Entwurf</strong>. Das bedeutet, dass du den Verfasser*innen helfen kannst, die Idee weiter zu entwickeln, indem du unten Kommentare hinzufügst oder direkt Zugriff auf den Entwurf anforderst. Sobald die Verfasser*innen dir Zugriff gewähren, kannst du Änderungen direkt am Entwurf vornehmen.
           publish_info: Veröffentliche diese Version des Entwurfs oder
           withdraw: ziehe den Entwurf zurück
         states:
