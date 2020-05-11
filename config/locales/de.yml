@@ -401,8 +401,6 @@ de:
           step_1: Kollaborativen Entwurf erstellen
           step_2: Mit anderen kollaborativen Entwürfen vergleichen
           step_3: Kollaborativen Entwurf vervollständigen
-      index:
-        collaborative_drafts_list: Liste der kollaborativen Entwürfe
       models:
         proposal:
           fields:
@@ -416,6 +414,7 @@ de:
           state: Status
           voted: Gewählte Vorschläge
         index:
+          collaborative_drafts_list: Liste der kollaborativen Entwürfe
           see_all_withdrawn: Sieh dir alle zurückgezogenen Vorschläge an.
         orders:
           most_commented: Anzahl Kommentare

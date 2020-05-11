@@ -1,7 +1,14 @@
 module ApplicationHelper
 
   def number_to_currency(number, options = {})
-    super number, options.merge(locale: :'de-CH')
+    defaults = {
+        locale: :de,
+        unit: Decidim.currency_unit,
+        separator: ',',
+        delimiter: '\'',
+        format: '%u %n'
+    }
+    super number, defaults.merge(options)
   end
 
 end
