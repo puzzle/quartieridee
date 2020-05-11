@@ -1,0 +1,1 @@
+Decidim::DiffCell.include Quartieridee::DiffCell

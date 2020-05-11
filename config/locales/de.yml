@@ -30,7 +30,422 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 de:
+  activemodel:
+    attributes:
+      collaborative_draft:
+        has_address: Hat einen Standort
+        state: Status
+        user_group_id: Unter welchem Namen möchtest du deinen kollaborativen Entwurf veröffentlichen?
+      debate:
+        user_group_id: Unter welchem Namen möchtest du deine Debatte veröffentlichen?
+      dummy_resource:
+        end_date: Ende
+        start_date: Beginn
+      initiative:
+        state: Status
+      proposal:
+        has_address: Hat einen Standort
+        state: Status
+      question:
+        origin_title: Herkunft
+        origin_url: Herkunfts-URL
+      result:
+        end_date: Ende
+        start_date: Beginn
+      user:
+        about: Über mich
+        avatar: Bild
+        email: Meine E-Mail
+        name: Mein Name
+        nickname: Mein Spitzname
+        password_confirmation: Passwort bestätigen
+        personal_url: Meine Website
+        remove_avatar: Bild entfernen
+    errors:
+      models:
+        proposal:
+          attributes:
+            attachment:
+              needs_to_be_reattached: Der Anhang muss nochmals hinzugefügt werden.
+  activerecord:
+    models:
+      decidim/proposals/collaborative_draft:
+        one: Kollaborativer Entwurf
+        other: Kollaborative Entwürfe
   decidim:
+    account:
+      delete:
+        alert: Diese Aktion kann nicht rückgängig gemacht werden. Wenn du dein Konto löschst, kannst du dich mit diesem Konto nicht mehr anmelden und musst dich neu registrieren.
+        confirm:
+          question: Bist du sicher, dass du dein Konto löschen möchtest?
+        explanation: "Optional: Gerne würden wir wissen, wieso du dein Konto löschen möchtest."
+      show:
+        update_account: Änderungen speichern
+    accountability:
+      models:
+        result:
+          fields:
+            end_date: Ende
+            start_date: Beginn
+      results:
+        home_header:
+          global_status: Umsetzungsfortschritt des Gesamtprozesses
+        show:
+          stats:
+            last_updated_at: Zuletzt aktualisiert am
+    admin:
+      actions:
+        browse: Durchsuchen
+      attachments:
+        create:
+          success: Anhang erfolgreich erstellt
+        destroy:
+          success: Anhang erfolgreich entfernt
+        index:
+          attachments_title: Anhänge
+        update:
+          success: Anhang erfolgreich aktualisiert
+      initiative:
+        attachments: Anhänge
+      menu:
+        assemblies_submenu:
+          attachments: Anhänge
+        conferences_submenu:
+          attachments: Anhänge
+        participatory_processes_submenu:
+          attachments: Anhänge
+      models:
+        initiatives:
+          fields:
+            state: Status
+        initiatives_votes:
+          fields:
+            initiative_end_date: Ende
+            initiative_start_date: Beginn
+        participatory_process_step:
+          fields:
+            end_date: Ende
+            start_date: Beginn
+      questions:
+        attachments: Anhänge
+    amendments:
+      amendable:
+        help_text: ""
+    blogs:
+      posts:
+        show:
+          view: Ansehen
+    budgets:
+      actions:
+        attachments: Anhänge
+      projects:
+        budget_summary:
+          description: Welche Projekte sollen finanziert werden? Wähle so viele gewünschte Projekte aus, bis das Budget ausgeschöpft ist. Gib mindestens %{minimum_budget} aus. Bestätige deine finale Auswahl mit einem Klick auf "Abstimmen".
+          title: Du entscheidest über das Budget
+        order_selected_projects:
+          view: Ansehen
+        project:
+          view: Ansehen
+    components:
+      accountability:
+        name: Umsetzungsstand
+      add_comment_form:
+        form:
+          body:
+            placeholder: Was meinst du dazu?
+          user_group_id:
+            label: Kommentiere als
+      comment_order_selector:
+        order:
+          best_rated: Bestbewertet
+          older: Chronologisch
+          recent: Kürzlich hinzugefügt
+        title: 'Sortiere nach:'
+      budgets:
+        actions:
+          vote: Abstimmen
+        settings:
+          global:
+            total_budget: Gesamtbudget
+      comment:
+        report:
+          action: Meldung absenden
+          description: Wieso ist dieser Inhalt problematisch / unangemessen?
+          details: Zusätzliche Anmerkungen
+          reasons:
+            does_not_belong: Er passt aus anderen Gründen nicht auf diese Plattform.
+            offensive: Er ist rassistisch, antisemitisch, sexistisch, homophob oder andersweitig diskriminierend oder bedrohend.
+            spam: Er ist offensichtlich Spam, unerwünschte Werbung oder ähnliches.
+          title: Problematischen Inhalt melden
+      proposals:
+        settings:
+          global:
+            collaborative_drafts_enabled: Kollaborative Entwürfe aktiviert
+    conferences:
+      admin:
+        send_conference_diploma_mailer:
+          diploma:
+            diploma_html: Die Teilnahmebestätigung für die Konferenz <a href="%{url}">%{title}</a> ist angehängt.
+      models:
+        conference_registration:
+          fields:
+            state: Status
+    consultations:
+      filters:
+        state: Status
+      show:
+        badge_name:
+          open: Offen
+          open_votes: Stimmen offen
+        footer_button_text:
+          view: Ansehen
+    data_portability:
+      show:
+        download_data_description: Hier kannst du alle Daten, die wir von dir gespeichert haben, herunterladen und ansehen. Wir stellen dir einen Link an <strong>%{user_email}</strong> zu.
+    debates:
+      debates:
+        debate:
+          participate: Mitreden
+        filters:
+          citizens: Einzelpersonen
+          origin: Herkunft
+      models:
+        debate:
+          fields:
+            end_date: Ende
+            start_date: Beginn
+    devise:
+      omniauth_registrations:
+        new:
+          nickname_help: Dein Alias auf "%{organization}". Darf keine Abstände, Umlaute oder Sonderzeichen aufweisen.
+          password_help: "Das Passwort muss mindestens %{minimun_characters} Zeichen lang sein und nicht zu gewöhnlich sein (z.B. 123456). Darf deinen Spitznamen und deine E-Mail nicht enthalten."
+          username_help: Öffentlich sichtbarer Name, der in deinen Beiträgen angezeigt wird. Wenn du lieber anonym bleibst, kannst du auch einen Namen erfinden.
+      registrations:
+        new:
+          already_have_an_account?: Du hast bereits ein Konto?
+          newsletter: Ich möchte gelegentlich per Newsletter über Neuigkeiten informiert werden.
+          newsletter_title: Kontakterlaubnis
+          nickname_help: Dein Alias auf "%{organization}". Darf keine Abstände, Umlaute oder Sonderzeichen aufweisen.
+          password_help: "Das Passwort muss mindestens %{minimun_characters} Zeichen lang sein und nicht zu gewöhnlich sein (z.B. 123456). Darf deinen Spitznamen und deine E-Mail nicht enthalten."
+          subtitle: Registriere dich, um an Diskussionen teilzunehmen und Vorschläge zu unterstützen.
+          tos_agreement: Ich stimme den %{link} zu.
+          username_help: Öffentlich sichtbarer Name, der in deinen Beiträgen angezeigt wird. Wenn du lieber anonym bleibst, kannst du auch einen Namen erfinden.
+      shared:
+        newsletter_modal:
+          buttons:
+            check: Kontakterlaubnis erteilen und fortfahren
+            unckeck: Ohne Kontakterlaubnis fortfahren
+          notice: |-
+            <p>Hey, bist du sicher, dass du keinen Newsletter erhalten möchtest?<br>
+            Für uns ist es sehr wichtig, dass wir dich gelegentlich kontaktieren können, um dir wichtige Ankündigungen mitzuteilen - zum Beispiel, wenn wir grosses mit deinen Inputs vorhaben.</p>
+            <p>Falls du dennoch nicht durch weitere Newsletter belästigt werden möchtest, verstehen wir diese Entscheidung natürlich auch. So oder so kannst du diese Entscheidung jederzeit in deinen Kontoeinstellungen unter "Benachrichtigungen" wieder anpassen.</p>
+            <p>Danke fürs Lesen!</p>
+    errors:
+      not_found:
+        content_doesnt_exist: Diese Seite wurde leider nicht gefunden. Entschuldige.
+        title: Ups!
+    events:
+      proposals:
+        collaborative_draft_access_accepted:
+          email_intro: '%{requester_name} wurde als Mitwirkende*r beim kollaborativen Entwurf <a href="%{resource_path}">%{resource_title}</a> akzeptiert.'
+          email_outro: Du hast diese Mitteilung erhalten, weil du zum Bearbeiten von <a href="%{resource_path}">%{resource_title}</a> berechtigt bist.
+          email_subject: "%{requester_name} bei %{resource_title} akzeptiert"
+          notification_title: <a href="%{requester_path}">%{requester_name} %{requester_nickname}</a> wurde <strong>als Mitwirkende*r</strong> beim kollaborativen Entwurf <a href="%{resource_path}">%{resource_title}</a> <strong>akzeptiert</strong>.
+        collaborative_draft_access_rejected:
+          email_intro: '%{requester_name} wurde als Mitwirkende*r beim kollaborativen Entwurf <a href="%{resource_path}">%{resource_title}</a> abgelehnt.'
+          email_outro: Du hast diese Mitteilung erhalten, weil du zum Bearbeiten von <a href="%{resource_path}">%{resource_title}</a> berechtigt bist.
+          email_subject: "%{requester_name} bei %{resource_title} abgelehnt"
+          notification_title: <a href="%{requester_path}">%{requester_name} %{requester_nickname}</a> wurde <strong>als Mitwirkende*r</strong> bei <a href="%{resource_path}">%{resource_title}</a> <strong>abgelehnt</strong>.
+        collaborative_draft_access_requested:
+          email_intro: '%{requester_name} hat um Zugriff auf deinen kollaborativen Entwurf angefragt. Du kannst den Antrag direkt auf der Entwurfsseite <a href="%{resource_path}">%{resource_title}</a> <strong>annehmen oder ablehnen</strong>.'
+          email_outro: Du hast diese Mitteilung erhalten, weil du zum Bearbeiten von <a href="%{resource_path}">%{resource_title}</a> berechtigt bist.
+          email_subject: "%{requester_name} möchte bei %{resource_title} mitwirken"
+          notification_title: <a href="%{requester_path}">%{requester_name} %{requester_nickname}</a> hat beantragt, beim kollaborativen Entwurf <a href="%{resource_path}">%{resource_title}</a> mitzuwirken. Bitte <strong>akzeptiere</strong> den Antrag oder <strong>lehne ihn ab</strong>.
+        collaborative_draft_access_requester_accepted:
+          email_intro: Du wurdest als Mitwirkende*r beim kollaborativen Entwurf <a href="%{resource_path}">%{resource_title}</a> akzeptiert.
+          email_outro: Du hast diese Mitteilung erhalten, weil du angefordert hast, beim kollaborativen Entwurf <a href="%{resource_path}">%{resource_title}</a> mitzuwirken.
+          email_subject: Als Mitwirkende*r bei %{resource_title} angenommen
+          notification_title: Du wurdest <strong>als Mitwirkende*r</strong> beim kollaborativen Entwurf <a href="%{resource_path}">%{resource_title}</a> akzeptiert.
+        collaborative_draft_access_requester_rejected:
+          email_intro: Du wurdest als Mitwirkende*r beim kollaborativen Entwurf <a href="%{resource_path}">%{resource_title}</a> abgelehnt.
+          email_outro: Du hast diese Mitteilung erhalten, weil du angefordert hast, beim kollaborativen Entwurf <a href="%{resource_path}">%{resource_title}</a> mitzuwirken.
+          email_subject: Als Mitwirkende*r bei %{resource_title} abgelehnt
+          notification_title: Du wurdest <strong>als Mitwirkende*r</strong> beim kollaborativen Entwurf <a href="%{resource_path}">%{resource_title}</a> <strong>abgelehnt</strong>.
+        collaborative_draft_withdrawn:
+          email_intro: <a href="%{author_path}">%{author_name} %{author_nickname}</a> hat den kollaborativen Entwurf <a href="%{resource_path}">%{resource_title}</a> zurückgezogen.
+          email_outro: Du hast diese Mitteilung erhalten, weil du zum Bearbeiten von <a href="%{resource_path}">%{resource_title}</a> berechtigt warst.
+          email_subject: "Gemeinsamer Entwurf %{resource_title} von %{author_name} %{author_nickname} zurückgezogen."
+          notification_title: <a href="%{author_path}">%{author_name} %{author_nickname}</a> hat den kollaborativen Entwurf <a href="%{resource_path}">%{resource_title}</a> <strong>zurückgezogen</strong>.
+    filters:
+      linked_classes:
+        collaborative_draft: Kollaborativer Entwurf
+        project: Projektiert
+    follows:
+      create:
+        participatory_space: Du folgst bereits %{space_name}
+    groups:
+      new:
+        subtitle: Erstelle eine Gruppe und lade andere dazu ein, Teil deiner Gruppe zu sein.
+    initiatives:
+      admin:
+        answers:
+          info_initiative:
+            state: Status
+      initiatives:
+        filters:
+          open: Offen
+          state: Status
+    meetings:
+      actions:
+        attachments: Anhänge
+      admin:
+        agenda:
+          form:
+            end_date: Ende
+            start_date: Beginn
+      content_blocks:
+        upcoming_events:
+          upcoming_events: Kommende Veranstaltungen
+      directory:
+        meetings:
+          index:
+            past: Vergangene Veranstaltungen
+            upcoming: Kommende Veranstaltungen
+      meetings:
+        filters:
+          past: Vergangene Veranstaltungen
+          upcoming: Kommende Veranstaltungen
+        show:
+          view: Ansehen
+      models:
+        meeting:
+          fields:
+            end_date: Ende
+            start_date: Beginn
+    menu:
+      help: Info & Hilfe
+      processes: Mitmachen
+    notifications_settings:
+      show:
+        email_on_notification: Ich möchte jedes Mal eine E-Mail erhalten, wenn ich benachrichtigt werde.
+        everything_followed: wenn es Inhalte betrifft, denen ich folge
+        newsletter_notifications: Ich möchte Newsletter per E-Mail erhalten.
+        own_activity: wenn mich etwas direkt betrifft, also wenn mich z.B. jemand erwähnt oder meinen Vorschlag kommentiert
+        receive_notifications_about: "Ich möchte benachrichtigt werden:"
+        send_notifications_by_email: E-Mail Benachrichtigungen
+    pages:
+      home:
+        footer_sub_hero:
+          footer_sub_hero_body: Ideen entwickeln. Diskutieren. Budgetieren.
+          footer_sub_hero_headline: %{organization} - deine lokale Beteiligungsplattform.
+      index:
+        subheading: Hier findest du Fragen und Antworten rund um %{name}.
+    participatory_processes:
+      pages:
+        home:
+          highlighted_processes:
+            active_processes: Laufende Prozesse
+            active_step: Aktiver Schritt
+            see_all_processes: Alle Prozesse anzeigen
+      participatory_process_groups:
+        highlighted_meetings:
+          past_meetings_meetings: Vergangene Events
+          upcoming_meetings: Nächste Events
+      show:
+        end_date: Ende
+        start_date: Beginn
+    participatory_spaces:
+      highlighted_meetings:
+        past_meetings_meetings: Vergangene Events
+        upcoming_meetings: Nächste Events
+    proposals:
+      application_helper:
+        filter_origin_values:
+          citizens: Einzelpersonen
+          meetings: Events
+          user_groups: Gruppen
+      collaborative_drafts:
+        collaborative_draft:
+          publish:
+            error: Bei der Veröffentlichung des kollaborativen Entwurfs sind Fehler aufgetreten.
+        compare:
+          mine_is_different: Mein kollaborativer Entwurf ist anders
+        complete:
+          title: Kollaborativen Entwurf vervollständigen
+        edit:
+          attachment_legend: (Optional) Du kannst einen Anhang hinzufügen
+          title: Kollaborativen Entwurf bearbeiten
+        new:
+          title: Kollaborativen Entwurf erstellen
+        new_collaborative_draft_button:
+          new_collaborative_draft: Neuer kollaborativer Entwurf
+        show:
+          edit: Kollaborativen Entwurf bearbeiten
+            info-message: Dies ist ein <strong>kollaborativer Vorschlags-Entwurf</strong>. Das bedeutet, dass du den Verfasser*innen helfen kannst, die Idee weiter zu entwickeln, indem du unten Kommentare hinzufügst oder direkt Zugriff auf den Entwurf anforderst. Sobald die Verfasser*innen dir Zugriff gewähren, kannst du Änderungen direkt am Entwurf vornehmen.
+          publish_info: Veröffentliche diese Version des Entwurfs oder
+          withdraw: ziehe den Entwurf zurück
+        states:
+          open: Offen
+        update:
+          error: Beim Speichern des kollaborativen Entwurfs sind Fehler aufgetreten.
+        view_collaborative_draft: Kollaborativen Entwurf anzeigen
+        withdraw:
+          error: Es gab Fehler beim Schließen des kollaborativen Entwurfs.
+          irreversible_action_modal:
+            ok: Kollaborativen Entwurf zurückziehen
+        wizard_aside:
+          info: Du erstellst einen <strong>kollaborativen Entwurf</strong>.
+        wizard_steps:
+          step_1: Kollaborativen Entwurf erstellen
+          step_2: Mit anderen kollaborativen Entwürfen vergleichen
+          step_3: Kollaborativen Entwurf vervollständigen
+      index:
+        collaborative_drafts_list: Liste der kollaborativen Entwürfe
+      models:
+        proposal:
+          fields:
+            state: Status
+      proposals:
+        filters:
+          activity: Art
+          my_proposals: Eigene Vorschläge
+          origin: Herkunft
+          related_to: Umsetzung
+          state: Status
+          voted: Gewählte Vorschläge
+        index:
+          see_all_withdrawn: Sieh dir alle zurückgezogenen Vorschläge an.
+        orders:
+          most_commented: Anzahl Kommentare
+          most_endorsed: Grösste Zustimmung
+          most_followed: Anzahl Followers
+          most_voted: Anzahl Stimmen
+          recent: Kürzlich hinzugefügt
+          with_more_authors: Von mehreren Autoren erstellt
+        preview:
+          proposal_edit_before_minutes:
+            one: Du kannst diesen Vorschlag in der ersten Minute nach seiner Veröffentlichung noch unbemerkt bearbeiten. Nach Ablauf dieses Zeitfensters kann der Vorschlag zwar noch verändert werden, aber diese Änderungen werden dann für andere Nutzer*innen stets nachvollziehbar sein.
+            other: Du kannst diesen Vorschlag in den ersten %{count} Minuten nach seiner Veröffentlichung noch unbemerkt bearbeiten. Nach Ablauf dieses Zeitfensters kann der Vorschlag zwar noch verändert werden, aber diese Änderungen werden dann für andere Nutzer*innen stets nachvollziehbar sein.
+        show:
+          link_to_collaborative_draft_help_text: Dieser Vorschlag ist das Ergebnis eines kollaborativen Entwurfs. Vergleiche die älteren Versionen.
+          link_to_collaborative_draft_text: Kollaborativen Entwurf anzeigen
+        wizard_aside:
+          info: Du erstellst einen Vorschlag
+      versions:
+        stats:
+          back_to_collaborative_draft: Zurück zum kollaborativen Entwurf
+          version_author: Verfasser*in dieser Version
+    resource_links:
+      included_projects:
+        result_project: Dieses Ergebnis basiert auf folgenden Projekten
+      included_proposals:
+        result_proposal: Dieses Ergebnis basiert auf folgenden Vorschlägen
+    sortitions:
+      sortitions:
+        filters:
+          state: Status
+        sortition:
+          view: Ansehen
     system:
       actions:
         confirm_destroy: Möchten Sie das wirklich löschen?
@@ -73,6 +488,39 @@ de:
           our_getting_started_guide: Leitfaden für Anfänger
       titles:
         dashboard: Dashboard
+    user_interests:
+      show:
+        my_interests: Meine Themen
+        select_your_interests: Hier kannst du Themen auswählen, die dich interessieren. Du siehst aktuelle Aktivitäten der ausgewählten Themen in der "Zeitleiste" deines Profils.
+        update_my_interests: Änderungen speichern
+  devise:
+    confirmations:
+      confirmed: Deine E-Mail-Adresse wurde erfolgreich bestätigt.
+    mailer:
+      confirmation_instructions:
+        subject: "Quartieridee: E-Mail bestätigen"
+      reset_password_instructions:
+        action: Mein Passwort ändern
+        greeting: Hallo %{recipient}!
+        instruction: "Jemand hat einen Link angefordert, um dein Passwort zu ändern. Falls du das selbst warst, dann folge diesem Link:"
+        instruction_2: Falls du das nicht selbst warst, kannst du diese E-Mail ignorieren.
+        instruction_3: Dein Passwort ändert sich erst, wenn du auf den obigen Link zugreifst und ein neues Passwort erstellst.
+        subject: Passwort zurücksetzen
+    passwords:
+      new:
+        forgot_your_password: Hast du dein Passwort vergessen?
+        send_me_reset_password_instructions: Mein Passwort zurücksetzen
+      send_instructions: Wir stellen dir innert wenigen Minuten einen Link zum Zurücksetzen deines Passworts zu.
+      updated: Dein Passwort wurde erfolgreich geändert. Du bist jetzt angemeldet.
+      updated_not_active: Dein Passwort wurde erfolgreich geändert.
+    shared:
+      links:
+        forgot_your_password: Hast du dein Passwort vergessen?
+        didn_t_receive_confirmation_instructions: Hast du keine Bestätigungsmail erhalten?
+        didn_t_receive_unlock_instructions: Hast du keine Entsperrungsanweisungen erhalten?
+  errors:
+    messages:
+      too_many_marks: enthält zu viele aufeinanderfolgende Satzzeichen (z.B. "!" und "?")
   hello: "Hallo Welt"
   layouts:
     decidim:
@@ -80,4 +528,17 @@ de:
         description_html: Diese Seite verwendet Cookies. Durch die weitere Verwendung dieser Seite stimmst Du der Verwendung von Cookies zu. Wir verwenden Matomo für anonymisierte Statistiken. Erfahre %{link} mehr darüber.
         link_label: hier
         ok: Ich stimme zu
+      participatory_process_groups:
+        participatory_process_group:
+          browse: Durchsuchen
+      user_profile:
+        account: Über mich
+        authorizations: Berechtigungen
+        delete_my_account: Konto löschen
+        my_data: Meine Daten
+        my_interests: Themen
+        notifications_settings: Benachrichtigungen
+        title: Kontoeinstellungen
+        user_groups: Gruppen
+  total_budget: Gesamtbudget
   

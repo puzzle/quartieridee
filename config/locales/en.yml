@@ -30,6 +30,82 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  decidim:
+    budgets:
+      projects:
+        budget_summary:
+          description: What projects would you allocate budget to? Vote on as many ideas as you with before reaching the total spendable sum. You must invest at least %{minimum_budget}. Confirm your final selection by clicking on "Vote".
+          title: Decide on the budget!
+    components:
+      accountability:
+        name: Implementation
+      comment:
+        report:
+          action: Send report
+          description: Why is this content inappropriate?
+          details: Additional comments
+          reasons:
+            does_not_belong: It does not belong on this platform for other reasons.
+            offensive: It is racist, anti-semitic, sexist, homophobic or otherwise discriminating or threatening.
+            spam: It is obviously spam, unsolicited advertising or similar.
+          title: Report a problem
+    devise:
+      omniauth_registrations:
+        new:
+          nickname_help: Your alias on "%{organization}". May not contain spaces or special characters.
+          password_help: "%{minimun_characters} characters minimum, must not be too common (e.g. 123456) and must be different from your nickname and your email."
+          username_help: Public name that appears on your posts. In order to guarantee anonymity, you may choose any name.
+      registrations:
+        new:
+          nickname_help: Your alias on "%{organization}". May not contain spaces or special characters.
+          password_help: "%{minimun_characters} characters minimum, must not be too common (e.g. 123456) and must be different from your nickname and your email."
+          username_help: Public name that appears on your posts. In order to guarantee anonymity, you may choose any name.
+      shared:
+        newsletter_modal:
+          buttons:
+            check: Keep unchecked
+            unckeck: Check and continue
+          notice: |-
+            <p>Hey, are you sure you don't want to receive a newsletter?<br>
+            Please consider ticking the newsletter checkbox below again. It is very important for us that you can receive occasional emails to make important announcements. You can always change this on your notification settings page.</p>
+            <p>If you don't tick the box you might be missing relevant information about new participatory opportunities within the platform. If you still want to avoid receiving newsletters, we perfectly understand you decision.</p>
+            <p>Thanks for reading this!</p>
+    follows:
+      create:
+        participatory_space: Already following %{space_name}
+    menu:
+      help: Info & Help
+    pages:
+      home:
+        footer_sub_hero:
+          footer_sub_hero_body: Develop ideas. Discuss. Decide.
+          footer_sub_hero_headline: %{organization} - your participatory platform.
+      index:
+        subheading: Here you will find questions and answers about %{name}.
+    participatory_processes:
+      participatory_process_groups:
+        highlighted_meetings:
+          past_meetings_meetings: Past events
+          upcoming_meetings: Upcoming events
+    participatory_spaces:
+      highlighted_meetings:
+        past_meetings_meetings: Past events
+        upcoming_meetings: Upcoming events
+    proposals:
+      proposals:
+        filters:
+          activity: Kind
+  devise:
+    mailer:
+      confirmation_instructions:
+        subject: "Quartieridee: Confirm E-Mail"
+      reset_password_instructions:
+        action: Change my password
+        greeting: Hello %{recipient}!
+        instruction: "Someone has requested a link to reset the password connected to this account. You can do this by clicking the following link:"
+        instruction_2: If you did not request this change, you may ignore this email.
+        instruction_3: Your password will only reset once you click the link and set a new one.
+        subject: Reset password
   hello: "Hello world"
   layouts:
     decidim:
