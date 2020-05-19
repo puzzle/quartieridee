@@ -32,6 +32,8 @@
 de:
   activemodel:
     attributes:
+      close_meeting:
+        proposal_ids: Im Event entstandene Vorschläge
       collaborative_draft:
         has_address: Hat einen Standort
         state: Status
@@ -43,6 +45,8 @@ de:
         start_date: Beginn
       initiative:
         state: Status
+      meeting:
+        private_meeting: Privater Event
       proposal:
         has_address: Hat einen Standort
         state: Status
@@ -67,8 +71,14 @@ de:
           attributes:
             attachment:
               needs_to_be_reattached: Der Anhang muss nochmals hinzugefügt werden.
+    models:
+      decidim/meetings/close_meeting_event: Event geschlossen
+      decidim/meetings/create_meeting_event: Event
+      decidim/meetings/upcoming_meeting_event: Kommender Event
   activerecord:
     models:
+      decidim/meetings/meeting:
+        one: Event
       decidim/proposals/collaborative_draft:
         one: Kollaborativer Entwurf
         other: Kollaborative Entwürfe
@@ -130,6 +140,7 @@ de:
         attachments: Anhänge
     amendments:
       amendable:
+        button: '%{model_name} ändern'
         help_text: ""
     blogs:
       posts:
@@ -186,6 +197,11 @@ de:
         send_conference_diploma_mailer:
           diploma:
             diploma_html: Die Teilnahmebestätigung für die Konferenz <a href="%{url}">%{title}</a> ist angehängt.
+      conference_registration_mailer:
+        confirmation:
+          details_1: 'Sie sind mit dem Typ %{registration_type} zur Konferenz angemeldet. Es kostet %{price} und Sie können an folgenden Events teilnehmen:'
+        pending_validation:
+          details: 'Sie haben sich für %{registration_type} Typ mit einem Preis von %{price} angemeldet und können an den folgenden Events teilnehmen:'
       models:
         conference_registration:
           fields:
@@ -245,6 +261,23 @@ de:
         content_doesnt_exist: Diese Seite wurde leider nicht gefunden. Entschuldige.
         title: Ups!
     events:
+      meetings:
+        meeting_closed:
+          affected_user:
+            notification_title: Der Event <a href="%{resource_path}">%{resource_title}</a> wurde geschlossen.
+          follower:
+            notification_title: Der Event <a href="%{resource_path}">%{resource_title}</a> wurde geschlossen.
+        meeting_registrations_over_percentage:
+          email_intro: Die verfügbaren Slots im Event "%{resource_title}" sind zu über %{percentage}% belegt.
+          email_subject: Die verfügbaren Slots im Event "%{resource_title}" sind zu über %{percentage}% belegt.
+        meeting_updated:
+          email_outro: Sie haben diese Benachrichtigung erhalten, weil Sie den Event "%{resource_title}" verfolgen. Sie können es aus dem vorherigen Link entfernen.
+        registrations_enabled:
+          email_outro: Sie haben diese Benachrichtigung erhalten, weil Sie den Event "%{resource_title}" verfolgen. Sie können es aus dem vorherigen Link entfernen.
+        upcoming_meeting:
+          email_intro: Der Event "%{resource_title}" beginnt in weniger als 48 Stunden.
+          email_outro: Sie haben diese Benachrichtigung erhalten, weil Sie den Event "%{resource_title}" verfolgen. Sie können es aus dem vorherigen Link entfernen.
+          email_subject: Der Event "%{resource_title}" beginnt in weniger als 48 Stunden.
       proposals:
         collaborative_draft_access_accepted:
           email_intro: '%{requester_name} wurde als Mitwirkende*r beim kollaborativen Entwurf <a href="%{resource_path}">%{resource_title}</a> akzeptiert.'
@@ -283,9 +316,24 @@ de:
     follows:
       create:
         participatory_space: Du folgst bereits %{space_name}
+    gamification:
+      badges:
+        attended_meetings:
+          description: Dieses Abzeichen wird gewährt, wenn Sie mehrere persönliche Events besuchen.
+          description_own: Du hast an %{score} Events teilgenommen.
+          name: Besuchte Events
+          next_level_in: Nimm an %{score} weiteren Events teil, um das nächste Level zu erreichen!
     groups:
       new:
         subtitle: Erstelle eine Gruppe und lade andere dazu ein, Teil deiner Gruppe zu sein.
+    help:
+      main_topic:
+        default_page:
+          content: "<p>In %{organization} kannst du durch die Links im oberen Menü an verschiedenen Themen teilnehmen, Vorschläge erfassen, mitdiskutieren, abstimmen.</p>\n"
+      participatory_spaces:
+        participatory_processes:
+          contextual: "<p>Ein <strong>Partizipationsprozess</strong> ist eine Folge von Partizipations-Aktivitäten (z.B. zuerst eine Umfrage ausfüllen, dann Vorschläge machen, diese face-to-face oder in virtuellen Events diskutieren, und sie schliesslich priorisieren) mit dem Ziel, ein bestimmtes Thema zu definieren und darüber zu entscheiden.</p> <p>Beispiele für partizipative Prozesse sind: ein Verfahren zur Wahl von Ausschussmitgliedern (bei dem die Kandidaturen zuerst präsentiert, anschliessend debattiert und schliesslich eine Kandidatur ausgewählt wird), die Bürgerhaushalte (bei denen Vorschläge gemacht, wirtschaftlich bewertet und mit dem verfügbaren Geld abgestimmt werden), ein strategischer Planungsprozess, die gemeinschaftliche Ausarbeitung einer Vorschrift oder Norm, die Gestaltung eines städtischen Raums oder die Erstellung eines öffentlichen Planes.</p>\n"
+          page: "<p>Ein <strong>Partizipationsprozess</strong> ist eine Folge von Partizipations-Aktivitäten (z.B. zuerst eine Umfrage ausfüllen, dann Vorschläge machen, diese face-to-face oder in virtuellen Events diskutieren, und sie schliesslich priorisieren) mit dem Ziel, ein bestimmtes Thema zu definieren und darüber zu entscheiden.</p> <p>Beispiele für partizipative Prozesse sind: ein Verfahren zur Wahl von Ausschussmitgliedern (bei dem die Kandidaturen zuerst präsentiert, anschliessend debattiert und schliesslich eine Kandidatur ausgewählt wird), die Bürgerhaushalte (bei denen Vorschläge gemacht, wirtschaftlich bewertet und mit dem verfügbaren Geld abgestimmt werden), ein strategischer Planungsprozess, die gemeinschaftliche Ausarbeitung einer Vorschrift oder Norm, die Gestaltung eines städtischen Raums oder die Erstellung eines öffentlichen Planes.</p>\n"
     initiatives:
       admin:
         answers:
@@ -298,30 +346,73 @@ de:
     meetings:
       actions:
         attachments: Anhänge
+        new: Neuer Event
       admin:
         agenda:
           form:
             end_date: Ende
             start_date: Beginn
+        exports:
+          meetings: Events
+        meeting_closes:
+          edit:
+            close: Schliessen
+            title: Event schliessen
+        meetings:
+          close:
+            success: Event erfolgreich abgeschlossen
+          update:
+            success: Event erfolgreich aktualisiert
+        models:
+          meeting:
+            name: Event
+      admin_log:
+        invite:
+          create: "%{user_name} hat %{attendee_name} eingeladen, dem Event %{resource_name} in %{space_name} beizutreten"
+          deleted: "%{user_name} hat %{attendee_name} aus dem Event %{resource_name} in %{space_name} ausgeladen"
+          update: "%{user_name} hat %{attendee_name} eingeladen, dem Event %{resource_name} in %{space_name} beizutreten"
+        meeting:
+          close: "%{user_name} hat den Event %{resource_name} in %{space_name} geschlossen"
+          create: "%{user_name} hat den Event %{resource_name} in %{space_name} erstellt"
+          delete: "%{user_name} hat den Event %{resource_name} in %{space_name} gelöscht"
+          export_registrations: "%{user_name} hat die Registrierungen des Events %{resource_name} in %{space_name} exportiert"
+          update: "%{user_name} hat den Event %{resource_name} in %{space_name} aktualisiert"
+        minutes:
+          create: "%{user_name} hat das Protokoll des Events %{resource_name} in %{space_name} erstellt"
+          update: "%{user_name} hat das Protokoll des Events %{resource_name} in %{space_name} aktualisiert"
       content_blocks:
         upcoming_events:
-          upcoming_events: Kommende Veranstaltungen
+          name: Kommende Events
+          upcoming_events: Kommende Events
       directory:
         meetings:
           index:
-            past: Vergangene Veranstaltungen
-            upcoming: Kommende Veranstaltungen
+            past: Vergangene Events
+            upcoming: Kommende Events
+      last_activity:
+        new_meeting_at_html: "<span>Neuer Event unter %{link}</span>"
       meetings:
         filters:
-          past: Vergangene Veranstaltungen
-          upcoming: Kommende Veranstaltungen
+          past: Vergangene Events
+          upcoming: Kommende Events
+        meeting_minutes:
+          meeting_minutes: Protokolle
         show:
+          join: Tritt dem Event bei
           view: Ansehen
       models:
         meeting:
           fields:
             end_date: Ende
             start_date: Beginn
+      registration_mailer:
+        confirmation:
+          confirmed_html: Ihre Registrierung für den Event <a href="%{url}">%{title}</a> wurde bestätigt.
+      types:
+        private_meeting: Privater Event
+    metrics:
+      meetings:
+        object: Events
     menu:
       help: Info & Hilfe
       processes: Mitmachen
@@ -335,6 +426,8 @@ de:
         send_notifications_by_email: E-Mail Benachrichtigungen
     pages:
       home:
+        extended:
+          meetings_explanation: Finde heraus, wo und wann du an öffentlichen Events teilnehmen kannst.
         footer_sub_hero:
           footer_sub_hero_body: Ideen entwickeln. Diskutieren. Budgetieren.
           footer_sub_hero_headline: '%{organization} - deine lokale Beteiligungsplattform.'
@@ -358,6 +451,8 @@ de:
       highlighted_meetings:
         past_meetings_meetings: Vergangene Events
         upcoming_meetings: Nächste Events
+      upcoming_meeting_for_card:
+        upcoming_meeting: Kommender Event
     proposals:
       application_helper:
         filter_origin_values:
@@ -392,7 +487,7 @@ de:
           error: Beim Speichern des kollaborativen Entwurfs sind Fehler aufgetreten.
         view_collaborative_draft: Kollaborativen Entwurf anzeigen
         withdraw:
-          error: Es gab Fehler beim Schließen des kollaborativen Entwurfs.
+          error: Es gab Fehler beim Schliessen des kollaborativen Entwurfs.
           irreversible_action_modal:
             ok: Kollaborativen Entwurf zurückziehen
         wizard_aside:
@@ -441,6 +536,10 @@ de:
         result_project: Dieses Ergebnis basiert auf folgenden Projekten
       included_proposals:
         result_proposal: Dieses Ergebnis basiert auf folgenden Vorschlägen
+      meetings_through_proposals:
+        result_meeting: 'Ähnliche Events:'
+      proposals_from_meeting:
+        proposal_meeting: 'Ähnliche Events:'
     sortitions:
       sortitions:
         filters:
