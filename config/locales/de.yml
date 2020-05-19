@@ -540,6 +540,15 @@ de:
         result_meeting: 'Ähnliche Events:'
       proposals_from_meeting:
         proposal_meeting: 'Ähnliche Events:'
+    shared:
+      flag_modal:
+        close: Schliessen
+        description: Wieso ist dieser Inhalt problematisch / unangemessen?
+        does_not_belong: Er passt aus anderen Gründen nicht auf diese Plattform.
+        offensive: Er ist rassistisch, antisemitisch, sexistisch, homophob oder andersweitig diskriminierend oder bedrohend.
+        report: Meldung absenden
+        spam: Er ist offensichtlich Spam, unerwünschte Werbung oder ähnliches.
+        title: Problematischen Inhalt melden
     sortitions:
       sortitions:
         filters:
