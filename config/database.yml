@@ -63,7 +63,9 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: quartieridee_test
+  database: <%= ENV.fetch('RAILS_TEST_DB_NAME') { 'quartieridee_test' } %>
+  username: <%= ENV.fetch('RAILS_TEST_DB_USERNAME') { 'quartieridee' } %>
+  password: <%= ENV.fetch('RAILS_TEST_DB_PASSWORD') { '7UhEIvi9wFymva3' } %>
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
