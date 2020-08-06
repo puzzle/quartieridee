@@ -106,6 +106,21 @@ de:
     admin:
       actions:
         browse: Durchsuchen
+        import_process: Beteiligungsprozess importieren
+      admin_terms_of_use:
+        accept:
+          error: Beim Akzeptieren der Nutzungsbedingungen ist ein Fehler aufgetreten.
+          success: Wunderbar! Du hast die Admin-Nutzungsbedingungen akzeptiert.
+        actions:
+          accept: Ich stimme den Nutzungsbedingungen zu
+          are_you_sure: Bist du sicher dass du die Nutzungsbedingungen ablehnen möchtest?
+          refuse: Nutzungsbedingungen ablehnen
+          title: Nutzungsbedingungen akzeptieren
+        title: Admin Nutzungsbedingungen
+        required_review:
+          alert: 'Required: Review our admin terms of use'
+          callout: Bitte nimm dir einen Moment Zeit um die Nutzungsbedingungen anzusehen. Ansonsten kannst du die Plattform nicht administrieren.
+          cta: Jetzt ansehen
       attachments:
         create:
           success: Anhang erfolgreich erstellt
@@ -115,6 +130,20 @@ de:
           attachments_title: Anhänge
         update:
           success: Anhang erfolgreich aktualisiert
+      filters:
+        filter_label: Filter
+        private_space_eq:
+          label: Privat
+          values:
+            'false': Öffentlich
+            'true': Privat
+        published_at_null:
+          label: Published
+          values:
+            'false': Published
+            'true': Unpublished
+        search_placeholder:
+          title_cont: ':collection nach Titel suchen'
       initiative:
         attachments: Anhänge
       menu:
@@ -138,6 +167,8 @@ de:
             start_date: Beginn
       questions:
         attachments: Anhänge
+    admin_terms_of_use:
+      default_body: "<h2>ADMIN NUTZUNGSBEDINGUNGEN</h2><p>Wir nehmen an du hast die übliche Lektion vom lokalen Systemadministrator bekommen. Üblicherweise geht es um folgende drei Punkte:</p><ol><li>Privatsphäre anderer respektieren.</li><li>Denken bevor man klickt.</li><li>Mit grosser Macht kommt grosse Verantwortung.</li></ol>"
     amendments:
       amendable:
         button: '%{model_name} ändern'
