@@ -107,6 +107,7 @@ de:
       actions:
         browse: Durchsuchen
         import_process: Beteiligungsprozess importieren
+        per_page: Pro Seite
       admin_terms_of_use:
         accept:
           error: Beim Akzeptieren der Nutzungsbedingungen ist ein Fehler aufgetreten.
@@ -143,7 +144,7 @@ de:
             'false': Published
             'true': Unpublished
         search_placeholder:
-          title_cont: ':collection nach Titel suchen'
+          title_cont: '%{collection} nach Titel suchen'
       initiative:
         attachments: Anhänge
       menu:
