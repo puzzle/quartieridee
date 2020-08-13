@@ -127,7 +127,27 @@ h1, h2, h3, h4, h5, h6, .button {
 }
 
 .button.secondary {
-  background-color: var(--secondary)
+  background-color: var(--secondary);
+
+  &.clear {
+    background-color: transparent;
+    border: 1px solid var(--secondary);
+    color: var(--secondary);
+  }
+}
+
+.button.secondary:hover {
+  background-color: rgba(var(--secondary-rgb), 0.75)
+}
+
+.button.secondary.hollow:hover {
+  background-color: transparent;
+  border-color: rgba(var(--secondary-rgb), 0.75);
+  color: rgba(var(--secondary-rgb), 0.75)
+}
+
+.card--list__icon {
+  fill: var(--primary)
 }
 
 .upcoming-events .card {
@@ -145,5 +165,45 @@ h1, h2, h3, h4, h5, h6, .button {
 .subhero {
   text-align: left;
 }
+
+// Color modifications
+.accountability .categories .categories--group .card__link .category--line strong, .text-info, .conference-media .media-links li, .conference-programme .programme-title, .inline-filters button[data-toggle], .hashtags__container span, .mentions__container span, .input__tag span, .process_stats .process_stats-item .icon, .white-button, .white-button:hover, .author__name {
+  color: var(--secondary) !important;
+}
+
+.result-view .title .icon, .orgchart .as-text {
+  fill: var(--secondary) !important;
+}
+
+.card--list__titled-text .card--list__counter, .floating-helper__icon, .floating-helper__content-close, .help-tooltip, .opinion-toggle--meh:hover, .opinion-toggle--meh:focus, .opinion-toggle--meh.is-active {
+  background-color: var(--secondary) !important;
+}
+
+.floating-helper__text, .floating-helper__icon-big {
+  color: var(--secondary) !important;
+  background-color: rgba(var(--secondary-rgb), .1) !important;
+}
+
+.floating-helper__content {
+  background-color: rgba(var(--secondary-rgb), .1) !important;
+  border-color: var(--secondary) !important;
+}
+
+.help-tooltip {
+  border-color: rgba(var(--secondary-rgb), 0.75) !important;
+}
+
+.inline-filters .dropdown-pane li:hover {
+  background-color: rgba(var(--secondary-rgb), 0.05) !important;
+}
+
+a, .link {
+  color: var(--secondary);
+}
+
+a:hover, .link:hover {
+  color: rgba(var(--secondary-rgb), 0.75)
+}
+
 
 // END MODIFICATIONS
