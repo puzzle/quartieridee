@@ -17,5 +17,7 @@
 // we had issues with JQuery when the tree was required before decidim.
 // require_tree .
 //= require cable.js
+//= require jquery3
+//= require collapse-floating-help.js
 
 //= require decidim
