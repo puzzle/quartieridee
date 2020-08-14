@@ -1,0 +1,25 @@
+<% if geolocalizable.address.present? %>
+  <div class="card card--secondary">
+    <div class="card__content address">
+      <div class="address__info">
+        <div class="address__icon">
+          <%= icon icon_name, width: 40, height: 70 %>
+        </div>
+        <div class="address__details">
+          <%= render partial: "decidim/shared/address_details", locals: { geolocalizable: geolocalizable } %>
+        </div>
+      </div>
+      <% if Decidim.geocoder.present? %>
+        <%= dynamic_map_for(proposals_data_for_map([ geolocalizable ])) do %>
+          <template id="marker-popup">
+            <div class="map-info__content">
+              <h5>${title}</h5>
+            </div>
+          </template>
+          <%= stylesheet_link_tag "decidim/map" %>
+          <%= javascript_include_tag "decidim/map" %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+<% end %>

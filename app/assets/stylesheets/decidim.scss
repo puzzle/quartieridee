@@ -161,6 +161,18 @@ h1, h2, h3, h4, h5, h6, .button {
   display: none;
 }
 
+.address {
+  flex-direction: column;
+
+  .address__info {
+    margin-bottom: 1em;
+  }
+
+  .map-info__content {
+    padding: 0;
+  }
+}
+
 
 .subhero {
   text-align: left;
