@@ -31,6 +31,10 @@
 
 en:
   decidim:
+    admin:
+      filters:
+        state_eq:
+          label: State
     budgets:
       projects:
         budget_summary:
