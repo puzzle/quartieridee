@@ -145,6 +145,9 @@ de:
             'true': Unpublished
         search_placeholder:
           title_cont: '%{collection} nach Titel suchen'
+        state_eq:
+          values:
+            evaluating: 'In Überprüfung'
       initiative:
         attachments: Anhänge
       menu:
@@ -174,6 +177,9 @@ de:
       amendable:
         button: '%{model_name} ändern'
         help_text: ""
+    application:
+      photos:
+        related_photos: Zugehörige Bilder
     blogs:
       posts:
         show:
@@ -182,8 +188,17 @@ de:
       actions:
         attachments: Anhänge
       projects:
+        budget_confirm:
+          are_you_sure: Bist du einverstanden?
+          description: Folgende Projekte hast du für das Budget ausgewählt.
+        budget_excess:
+          description: Mit deiner Projektauswahl überschreitest du das maximale Budget. Bitte wähle weniger Projekte aus Wenn Sie möchten, können Sie ein Projekt löschen, das Sie bereits ausgewählt haben, oder Sie wählen mit Ihren Einstellungen.
         budget_summary:
-          description: Welche Projekte sollen finanziert werden? Wähle so viele gewünschte Projekte aus, bis das Budget ausgeschöpft ist. Gib mindestens %{minimum_budget} aus. Bestätige deine finale Auswahl mit einem Klick auf "Abstimmen".
+          are_you_sure: Bist du sicher, dass du deine Stimme zurückziehen möchtest?
+          checked_out:
+            description: Du hast für die Verteilung des Budets abgestimmt. Falls du deine Meinung geändert hast, kannst du deine Stimme nochmals löschen und neu anfangen.
+            title: Abstimmung abgeschlossen
+          description: Welche Projekte sollen finanziert werden? Wähle so viele gewünschte Projekte aus, bis das Budget ausgeschöpft ist. Gib mindestens CHF %{minimum_budget}.- aus. Bestätige deine finale Auswahl mit einem Klick auf «Abstimmen».
           title: Du entscheidest über das Budget
         order_selected_projects:
           view: Ansehen
@@ -193,6 +208,7 @@ de:
       accountability:
         name: Umsetzungsstand
       add_comment_form:
+        account_message:  <a href="%{sign_in_url}">Melde Dich mit deinem Konto an</a> oder <a href="%{sign_up_url}">registriere dich</a>, um einen Kommentar hinzuzufügen.
         form:
           body:
             placeholder: Was meinst du dazu?
@@ -209,7 +225,7 @@ de:
           vote: Abstimmen
         settings:
           global:
-            total_budget: Gesamtbudget
+            total_budget: Gesamtbudget CHF
       comment:
         report:
           action: Meldung absenden
@@ -278,6 +294,9 @@ de:
           subtitle: Registriere dich, um an Diskussionen teilzunehmen und Vorschläge zu unterstützen.
           tos_agreement: Ich stimme den %{link} zu.
           username_help: Öffentlich sichtbarer Name, der in deinen Beiträgen angezeigt wird. Wenn du lieber anonym bleibst, kannst du auch einen Namen erfinden.
+      sessions:
+        already_signed_out: Erfolgreich abgemeldet
+        signed_out: Erfolgreich abgemeldet
       shared:
         newsletter_modal:
           buttons:
@@ -289,10 +308,34 @@ de:
             <p>Falls du dennoch nicht durch weitere Newsletter belästigt werden möchtest, verstehen wir diese Entscheidung natürlich auch. So oder so kannst du diese Entscheidung jederzeit in deinen Kontoeinstellungen unter "Benachrichtigungen" wieder anpassen.</p>
             <p>Danke fürs Lesen!</p>
     errors:
+      internal_server_error:
+        try_later: Bitte versuche es später nochmal.
       not_found:
         content_doesnt_exist: Diese Seite wurde leider nicht gefunden. Entschuldige.
         title: Ups!
     events:
+      amendments:
+        amendment_created:
+          affected_user:
+            notification_title: Für die Idee «<a href="%{amendable_path}">%{amendable_title}</a>» wurde eine Änderung vorgeschlagen.
+          follower:
+            notification_title: Für die Idee «<a href="%{amendable_path}">%{amendable_title}</a>» wurde eine Änderung vorgeschlagen.
+      comments:
+        comment_by_followed_user:
+          email_subject: "%{author_name} hat die Idee «%{resource_title}» kommentiert."
+          notification_title: <a href="%{author_path}">%{author_name} %{author_nickname}</a> hat die Idee «<a href="%{resource_path}">%{resource_title}</a>» kommentiert.
+        comment_created:
+          email_subject: "%{author_name} hat die Idee «%{resource_title}» kommentiert."
+          notification_title: <a href="%{author_path}">%{author_name} %{author_nickname}</a> hat die Idee «<a href="%{resource_path}">%{resource_title}</a>» kommentiert.
+      components:
+        component_published:
+          email_intro: 'Die Komponente «%{resource_title}» wurde für «%{participatory_space_title}» aktiviert. Sie können es auf dieser Seite sehen:'
+          notification_title: Die Komponente «%{resource_title}» wurde für «<a href="%{resource_path}">%{participatory_space_title}</a>» aktiviert
+      groups: 
+        join_request_created:
+          email_intro: Es gibt eine neue Beitrittsanfrage für die Gruppe «%{user_group_name}». Du kannst sie auf der <a href="%{resource_url}">Gruppenseite</a> bestätigen.
+          email_subject: Es gibt eine neue Beitrittsanfrage für die Gruppe «%{user_group_name}»!
+          notification_title: Es gibt eine neue Beitrittsanfrage für die Gruppe «%{user_group_name}». Du kannst sie auf der <a href="%{resource_path}">Gruppenseite</a> bestätigen.
       meetings:
         meeting_closed:
           affected_user:
@@ -310,6 +353,9 @@ de:
           email_intro: Der Event "%{resource_title}" beginnt in weniger als 48 Stunden.
           email_outro: Sie haben diese Benachrichtigung erhalten, weil Sie den Event "%{resource_title}" verfolgen. Sie können es aus dem vorherigen Link entfernen.
           email_subject: Der Event "%{resource_title}" beginnt in weniger als 48 Stunden.
+      participatory_process:
+        step_activated:
+          notification_title: Die Phase «%{resource_title}» wurde für «<a href="%{resource_path}">%{participatory_space_title}</a>» aktiviert.
       proposals:
         collaborative_draft_access_accepted:
           email_intro: '%{requester_name} wurde als Mitwirkende*r beim kollaborativen Entwurf <a href="%{resource_path}">%{resource_title}</a> akzeptiert.'
@@ -341,6 +387,18 @@ de:
           email_outro: Du hast diese Mitteilung erhalten, weil du zum Bearbeiten von <a href="%{resource_path}">%{resource_title}</a> berechtigt warst.
           email_subject: "Gemeinsamer Entwurf %{resource_title} von %{author_name} %{author_nickname} zurückgezogen."
           notification_title: <a href="%{author_path}">%{author_name} %{author_nickname}</a> hat den kollaborativen Entwurf <a href="%{resource_path}">%{resource_title}</a> <strong>zurückgezogen</strong>.
+        proposal_accepted:
+          affected_user:
+            email_intro: 'Dein Vorschlag "%{resource_title}" wurde angenommen. Sie können die Antwort auf dieser Seite lesen:'
+            notification_title: Dein Vorschlag <a href="%{resource_path}">%{resource_title}</a> wurde angenommen.
+        proposal_evaluating:
+          follower:
+            notification_title: Der Vorschlag «<a href="%{resource_path}">%{resource_title}</a>» wird geprüft.
+        proposal_published_for_space:
+          notification_title: Der Vorschlag «<a href="%{resource_path}">%{resource_title}</a>» wurde zu «%{participatory_space_title}» hinzugefügt.
+        proposal_rejected:
+          follower:
+            notification_title: Der Vorschlag <a href="%{resource_path}">%{resource_title}</a> wurde abgelehnt.
     filters:
       linked_classes:
         collaborative_draft: Kollaborativer Entwurf
@@ -348,6 +406,13 @@ de:
     follows:
       create:
         participatory_space: Du folgst bereits %{space_name}
+    forms:
+      questionnaires:
+        show:
+          questionnaire_answered:
+            body: Du hast diesen Fragebogen bereits beantwortet.
+            title: ''
+          tos_agreement: 'Mit der Teilnahme stimmst Du folgenden Nutzungsbedingungen zu:'
     gamification:
       badges:
         attended_meetings:
@@ -427,6 +492,9 @@ de:
         filters:
           past: Vergangene Events
           upcoming: Kommende Events
+        meetings:
+          no_meetings_warning: Keine Veranstaltung entspricht deinen Suchkriterien oder es ist keine Veranstaltung geplant.
+          upcomming_meetings_warning: Momentan sind keine Veranstaltungen geplant. Hier findest du alle vergangenen Veranstaltungen.
         meeting_minutes:
           meeting_minutes: Protokolle
         show:
@@ -442,6 +510,8 @@ de:
           confirmed_html: Ihre Registrierung für den Event <a href="%{url}">%{title}</a> wurde bestätigt.
       types:
         private_meeting: Privater Event
+    meetings_map:
+      view_meeting: Veranstaltung anzeigen
     metrics:
       meetings:
         object: Events
@@ -456,6 +526,9 @@ de:
         own_activity: wenn mich etwas direkt betrifft, also wenn mich z.B. jemand erwähnt oder meinen Vorschlag kommentiert
         receive_notifications_about: "Ich möchte benachrichtigt werden:"
         send_notifications_by_email: E-Mail Benachrichtigungen
+    orders:
+      checkout:
+        success: Deine Stimme ist bei uns angekommen. Danke fürs Mitmachen!
     pages:
       home:
         extended:
@@ -464,7 +537,23 @@ de:
           footer_sub_hero_body: Ideen entwickeln. Diskutieren. Budgetieren.
           footer_sub_hero_headline: '%{organization} - deine lokale Beteiligungsplattform.'
       index:
-        subheading: Hier findest du Fragen und Antworten rund um %{name}.
+        subheading: Hier findest du Fragen und Antworten rund um die «Quartieridee».
+      terms_and_conditions:
+        accept:
+          success: Danke! Du hast die Nutzungsbedingungen akzeptiert.
+        form:
+          agreement: Zustimmen
+          legend: Ich stimme den Nutzungsbedingungen zu
+        refuse:
+          modal_body: Solange du sie nicht akzeptierst, wirst du automatisch ausgeloggt und wirst die Plattform nicht mehr nutzen können. Du kannst <a href="%{data_portability_path}">deine persönlichen Daten downloaden</a> und / oder <a href="%{delete_path}">dein Konto löschen</a>.
+          modal_btn_continue: Ich möchte die Plattform weiter nutzen und akzeptiere die Bedingungen.
+          modal_btn_exit: Ablehnen oder später erinnern.
+          modal_button: Ablehnen
+          modal_title: Willst du die aktualisierten Nutzungsbedingungen wirklich nicht akzeptieren?
+        required_review:
+          alert: Wir haben unsere Nutzungsbedingungen aktualisiert. Bitte überprüfe diese.
+          body: Bitte nimm Dir einen Moment Zeit, um dich über die Aktualisierungen unserer Nutzungsbedingungen zu informieren und diese anzunehmen. Andernfalls kannst du die Plattform nicht mehr nutzen.
+          title: 'Erforderlich: Überprüfe die Aktualisierungen unserer Nutzungsbedingungen'
     participatory_processes:
       pages:
         home:
@@ -486,6 +575,12 @@ de:
       upcoming_meeting_for_card:
         upcoming_meeting: Kommender Event
     proposals:
+      admin:
+        proposal_answers:
+          form:
+            evaluating: In Überprufung
+      answers:
+        evaluating: In Überprüfung
       application_helper:
         filter_origin_values:
           citizens: Einzelpersonen
@@ -557,6 +652,10 @@ de:
         show:
           link_to_collaborative_draft_help_text: Dieser Vorschlag ist das Ergebnis eines kollaborativen Entwurfs. Vergleiche die älteren Versionen.
           link_to_collaborative_draft_text: Kollaborativen Entwurf anzeigen
+          proposal_in_evaluation_reason: Dieser Vorschlag wird geprüft
+          withdraw_confirmation: |
+            Bist du sicher, dass du deinen Vorschlag zurückziehen willst?
+            '(Hinweis: Der Vorschlag wird weiterhin im Archiv der zurückgezogenen Vorschläge auffindbar sind)'
         wizard_aside:
           info: Du erstellst einen Vorschlag
       versions:
@@ -637,6 +736,8 @@ de:
   devise:
     confirmations:
       confirmed: Deine E-Mail-Adresse wurde erfolgreich bestätigt.
+    failure:
+      already_authenticated: Du bist bereits angemeldet.
     mailer:
       confirmation_instructions:
         subject: "Quartieridee: E-Mail bestätigen"
@@ -681,5 +782,5 @@ de:
         notifications_settings: Benachrichtigungen
         title: Kontoeinstellungen
         user_groups: Gruppen
-  total_budget: Gesamtbudget
+  total_budget: Gesamtbudget CHF
   

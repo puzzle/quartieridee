@@ -37,12 +37,18 @@ en:
           label: State
     budgets:
       projects:
+        budget_confirm:
+          are_you_sure: Do you agree?
         budget_summary:
-          description: What projects would you allocate budget to? Vote on as many ideas as you with before reaching the total spendable sum. You must invest at least %{minimum_budget}. Confirm your final selection by clicking on "Vote".
+          description: What projects would you allocate budget to? Vote on as many ideas as you wish before reaching the total spendable sum. You must invest at least CHF {}.-. Confirm your final selction by clicking on "Vote".
           title: Decide on the budget!
     components:
       accountability:
         name: Implementation
+      budgets:
+        settings:
+          global:
+            total_budget: Total budget CHF
       comment:
         report:
           action: Send report
@@ -74,6 +80,42 @@ en:
             Please consider ticking the newsletter checkbox below again. It is very important for us that you can receive occasional emails to make important announcements. You can always change this on your notification settings page.</p>
             <p>If you don't tick the box you might be missing relevant information about new participatory opportunities within the platform. If you still want to avoid receiving newsletters, we perfectly understand you decision.</p>
             <p>Thanks for reading this!</p>
+    events:
+      amendments:
+        amendment_created:
+          affected_user:
+            email_intro: 'A proposed amendment has been added to «%{amendable_title}». You can see it from this page:'
+            notification_title: A proposed amendment has been added to «<a href="%{amendable_path}">%{amendable_title}</a>».
+          follower:
+            email_intro: 'A new amendment has been created for %{amendable_title}. You can see it from this page:'
+            notification_title: A new amendment has been created for <a href="%{amendable_path}">%{amendable_title}</a>.
+      comments:
+        comment_created:
+          email_subject: "%{author_name} posted a comment to «%{resource_title}»."
+          notification_title: <a href="%{author_path}"> posted a comment to «%{author_name} %{author_nickname}</a> in <a href="%{resource_path}">%{resource_title}</a>».
+      groups:
+        join_request_created:
+          email_intro: Someone requested to join the group «%{user_group_name}». You can accept or reject it from the <a href="%{resource_url}">group members page</a>.
+          email_subject: Someone requested to join the group «%{user_group_name}»!
+          notification_title: Someone requested to join the group «%{user_group_name}». You can accept or reject it from the <a href="%{resource_path}">group members page</a>.
+      proposals:
+        proposal_accepted:
+          affected_user:
+            email_intro: 'Your proposal «%{resource_title}» has been accepted. You can read the answer in this page:'
+            notification_title: Your proposal «<a href="%{resource_path}">%{resource_title}</a>» has been accepted.
+        proposal_evaluating:
+          follower:
+            notification_title: The proposal «<a href="%{resource_path}">%{resource_title}</a>» is being evaluated.
+        proposal_published_for_space:
+          email_intro: The proposal «%{resource_title}» has been added to «%{participatory_space_title}» that you are following.
+          notification_title: The proposal «<a href="%{resource_path}">%{resource_title}</a>» has been added to «%{participatory_space_title}».
+        proposal_rejected:
+          follower:
+            notification_title: The proposal «<a href="%{resource_path}">%{resource_title}</a>» has been rejected.
+      participatory_process:
+        step_activated:
+          email_intro: 'The phase «%{resource_title}» has been activated for «%{participatory_space_title}». You can see it from this page:'
+          notification_title: The phase «%{resource_title}» has been activated for «<a href="%{resource_path}">%{participatory_space_title}</a>».
     follows:
       create:
         participatory_space: Already following %{space_name}
@@ -86,6 +128,12 @@ en:
           footer_sub_hero_headline: '%{organization} - your participatory platform.'
       index:
         subheading: Here you will find questions and answers about %{name}.
+      terms_and_conditions:
+        form:
+          agreement: Agree
+          legend: I agree to the terms and conditions of use
+        refuse:
+          modal_button: Refuse
     participatory_processes:
       participatory_process_groups:
         highlighted_meetings:
@@ -117,3 +165,4 @@ en:
         description_html: This site uses cookies. By continuing to browse the site, you agree to our use of cookies. We also use Matomo for anonymous user statistics. Find out more about it %{link}.
         link_label: here
         ok: I agree
+  total_budget: Total budget CHF
