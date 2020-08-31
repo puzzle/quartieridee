@@ -10,7 +10,7 @@
         </div>
       </div>
       <% if Decidim.geocoder.present? %>
-        <%= dynamic_map_for(proposals_data_for_map([ geolocalizable ])) do %>
+        <%= dynamic_map_for(geolocalizables_data_for_map([ geolocalizable ])) do %>
           <template id="marker-popup">
             <div class="map-info__content">
               <h5>${title}</h5>
