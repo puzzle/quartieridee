@@ -1,3 +1,12 @@
+GIT
+  remote: https://github.com/OpenSourcePolitics/decidim-urlaliases
+  revision: 2d910f627b909e9a350f3cd3dfc4f2d8f180acf2
+  specs:
+    decidim-url_aliases (0.0.1)
+      decidim-core (>= 0.16.1)
+      rails (>= 5.2)
+      redirector
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -604,6 +613,8 @@ GEM
       virtus (~> 1.0.5)
       wisper (>= 1.6.1)
     redcarpet (3.5.0)
+    redirector (1.1.6)
+      rails (>= 3.1)
     redis (4.2.1)
     regexp_parser (1.7.1)
     request_store (1.5.0)
@@ -765,6 +776,7 @@ DEPENDENCIES
   decidim (~> 0.21)
   decidim-dev (~> 0.21)
   decidim-proposals (~> 0.21)
+  decidim-url_aliases!
   delayed_job_active_record
   faker (~> 1.9)
   letter_opener_web (~> 1.3)
