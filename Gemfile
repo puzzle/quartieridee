@@ -21,10 +21,10 @@ gem 'prometheus_exporter'
 gem 'pry-rails'
 gem 'puma', '~> 4.3'
 gem 'uglifier', '~> 4.1'
+gem 'byebug', '~> 11.0', platform: :mri
+gem 'pry-byebug'
 
 group :development, :test do
-  gem 'byebug', '~> 11.0', platform: :mri
-  gem 'pry-byebug'
 
   gem 'decidim-dev', DECIDIM_VERSION
 end
