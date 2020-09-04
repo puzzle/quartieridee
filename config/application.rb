@@ -32,5 +32,11 @@ module Quartieridee
     config.after_initialize do
       Geocoder.configure(Geocoder.config.merge(lookup: :nominatim, :units => :km))
     end
+
+    config.to_prepare do
+      Rails.root.glob('app/overrides/**/*_override.rb').each do |override|
+        require_dependency override
+      end
+    end
   end
 end
