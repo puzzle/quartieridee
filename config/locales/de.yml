@@ -177,6 +177,18 @@ de:
       amendable:
         button: '%{model_name} ändern'
         help_text: ""
+      emendation:
+        announcement:
+          accepted: |-
+            Durch diese Änderung für die %{amendable_type} %{proposal_link} wurde
+            auf akzeptiert <strong>%{announcement_date}</strong>.
+          evaluating: |-
+            Diese Änderung für die %{amendable_type} %{proposal_link}
+            wird bewertet.
+          rejected: "Diese Änderung für die %{amendable_type} %{proposal_link}\nwurde am <strong>%{announcement_date}</strong>abgelehnt."
+          withdrawn: |-
+            Diese Änderung für die %{amendable_type} %{proposal_link}
+            wurde vom Autor zurückgezogen.
     application:
       photos:
         related_photos: Zugehörige Bilder
@@ -650,6 +662,7 @@ de:
             one: Du kannst diesen Vorschlag in der ersten Minute nach seiner Veröffentlichung noch unbemerkt bearbeiten. Nach Ablauf dieses Zeitfensters kann der Vorschlag zwar noch verändert werden, aber diese Änderungen werden dann für andere Nutzer*innen stets nachvollziehbar sein.
             other: Du kannst diesen Vorschlag in den ersten %{count} Minuten nach seiner Veröffentlichung noch unbemerkt bearbeiten. Nach Ablauf dieses Zeitfensters kann der Vorschlag zwar noch verändert werden, aber diese Änderungen werden dann für andere Nutzer*innen stets nachvollziehbar sein.
         show:
+          changes_at_title: Ergänzungen zu "%{title}"
           link_to_collaborative_draft_help_text: Dieser Vorschlag ist das Ergebnis eines kollaborativen Entwurfs. Vergleiche die älteren Versionen.
           link_to_collaborative_draft_text: Kollaborativen Entwurf anzeigen
           proposal_in_evaluation_reason: Dieser Vorschlag wird geprüft
