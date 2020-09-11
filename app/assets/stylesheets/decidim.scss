@@ -221,4 +221,16 @@ a:hover, .link:hover {
   margin-bottom: 0px;
 }
 
+// Make the footer logos as big as possible
+.main-footer__badge {
+  height: 100%;
+  margin: -1em 1em;
+
+  img {
+    width: auto;
+    max-width: unset;
+    height: 100%;
+  }
+}
+
 // END MODIFICATIONS
