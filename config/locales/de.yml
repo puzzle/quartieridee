@@ -180,15 +180,17 @@ de:
       emendation:
         announcement:
           accepted: |-
-            Durch diese Änderung für die %{amendable_type} %{proposal_link} wurde
-            auf akzeptiert <strong>%{announcement_date}</strong>.
+            Diese Änderung für %{amendable_type} %{proposal_link} wurde
+            am <strong>%{date}</strong> akzeptiert.
           evaluating: |-
-            Diese Änderung für die %{amendable_type} %{proposal_link}
-            wird bewertet.
-          rejected: "Diese Änderung für die %{amendable_type} %{proposal_link}\nwurde am <strong>%{announcement_date}</strong>abgelehnt."
+            Diese Änderung für %{amendable_type} %{proposal_link} wird
+            bewertet.
+          rejected: |-
+            Diese Änderung für %{amendable_type} %{proposal_link} wurde
+            am <strong>%{date}</strong>abgelehnt.
           withdrawn: |-
-            Diese Änderung für die %{amendable_type} %{proposal_link}
-            wurde vom Autor zurückgezogen.
+            Diese Änderung für %{amendable_type} %{proposal_link} wurde
+            vom Autor zurückgezogen.
     application:
       photos:
         related_photos: Zugehörige Bilder
