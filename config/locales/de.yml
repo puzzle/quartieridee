@@ -91,6 +91,10 @@ de:
         explanation: "Optional: Gerne würden wir wissen, wieso du dein Konto löschen möchtest."
       show:
         update_account: Änderungen speichern
+      update:
+        error: Beim Aktualisieren Deines Kontos ist ein Fehler aufgetreten.
+        success: Dein Konto wurde erfolgreich aktualisiert.
+        success_with_email_confirmation: Dein Konto wurde erfolgreich aktualisiert. Du erhältst eine E-Mail zur Bestätigung deiner neuen E-Mail-Adresse.
     accountability:
       models:
         result:
@@ -770,6 +774,9 @@ de:
       send_instructions: Wir stellen dir innert wenigen Minuten einen Link zum Zurücksetzen deines Passworts zu.
       updated: Dein Passwort wurde erfolgreich geändert. Du bist jetzt angemeldet.
       updated_not_active: Dein Passwort wurde erfolgreich geändert.
+    registrations:
+      signed_up: Herzlich willkommen! Du hast dich erfolgreich angemeldet.
+      updated: Dein Konto wurde erfolgreich aktualisiert.
     shared:
       links:
         forgot_your_password: Hast du dein Passwort vergessen?
