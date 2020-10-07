@@ -226,7 +226,7 @@ de:
       accountability:
         name: Umsetzungsstand
       add_comment_form:
-        account_message:  <a href="%{sign_in_url}">Melde Dich mit deinem Konto an</a> oder <a href="%{sign_up_url}">registriere dich</a>, um einen Kommentar hinzuzufügen.
+        account_message:  <a href="%{sign_in_url}">Melde dich mit deinem Konto an</a> oder <a href="%{sign_up_url}">registriere dich</a>, um diesen Beitrag zu kommentieren.
         form:
           body:
             placeholder: Was meinst du dazu?
@@ -245,6 +245,7 @@ de:
           global:
             total_budget: Gesamtbudget CHF
       comment:
+        hide_replies: Antworten verbergen
         report:
           action: Meldung absenden
           description: Wieso ist dieser Inhalt problematisch / unangemessen?
@@ -254,6 +255,7 @@ de:
             offensive: Er ist rassistisch, antisemitisch, sexistisch, homophob oder andersweitig diskriminierend oder bedrohend.
             spam: Er ist offensichtlich Spam, unerwünschte Werbung oder ähnliches.
           title: Problematischen Inhalt melden
+        show_replies: '%{replies_count} Antworten anzeigen'
       proposals:
         settings:
           global:
@@ -297,6 +299,8 @@ de:
             end_date: Ende
             start_date: Beginn
     devise:
+      failure:
+        unauthenticated: Du musst dich anmelden oder registrieren, bevor du fortfahren kannst.
       omniauth_registrations:
         new:
           nickname_help: Dein Alias auf "%{organization}". Darf keine Abstände, Umlaute oder Sonderzeichen aufweisen.
@@ -333,6 +337,17 @@ de:
         title: Ups!
     events:
       amendments:
+        amendment_accepted:
+          affected_user:
+            email_intro: 'Eine Änderung wurde für %{amendable_title} vorgeschlagen. Du kannst sie hier überprüfen:'
+            email_outro: Du hast diese Benachrichtigung erhalten, weil du der*die Autor*in in der Idee bist.
+            email_subject: Eine für %{amendable_title} angenommene Änderung von %{emendation_author_nickname}
+            notification_title: Die <a href="%{emendation_path}">Abänderung</a> die durch <a href="%{emendation_author_path}">%{emendation_author_nickname}</a> wurde, wurde für <a href="%{amendable_path}">%{amendable_title}</a>.
+          follower:
+            email_intro: 'Eine Änderung wurde für %{amendable_title} vorgeschlagen. Du kannst sie hier überprüfen:'
+            email_outro: Du hast diese Benachrichtigung erhalten, weil du %{amendable_title} folgst. Du kannst den Erhalt von Benachrichtigungen über den vorherigen Link beenden.
+            email_subject: Eine für %{amendable_title} angenommene Änderung von %{emendation_author_nickname}
+            notification_title: Die <a href="%{emendation_path}">Abänderung</a> die durch <a href="%{emendation_author_path}">%{emendation_author_nickname}</a> wurde, wurde für <a href="%{amendable_path}">%{amendable_title}</a>.
         amendment_created:
           affected_user:
             notification_title: Für die Idee «<a href="%{amendable_path}">%{amendable_title}</a>» wurde eine Änderung vorgeschlagen.
@@ -343,13 +358,20 @@ de:
           email_subject: "%{author_name} hat die Idee «%{resource_title}» kommentiert."
           notification_title: <a href="%{author_path}">%{author_name} %{author_nickname}</a> hat die Idee «<a href="%{resource_path}">%{resource_title}</a>» kommentiert.
         comment_created:
-          email_subject: "%{author_name} hat die Idee «%{resource_title}» kommentiert."
+          email_intro: "Das Thema %{resource_title} wurde kommentiert:"
+          email_outro: Du hast diese Benachrichtigung erhalten, weil du dem Thema "%{resource_title}" oder dem*der Autor*in folgst. Wenn du diese Nachrichten nicht mehr erhalten möchtest, kannst du dich unter dem angegebenen Link abmelden.
+          email_subject: "%{author_name} hat die Idee «%{resourcje_title}» kommentiert."
           notification_title: <a href="%{author_path}">%{author_name} %{author_nickname}</a> hat die Idee «<a href="%{resource_path}">%{resource_title}</a>» kommentiert.
       components:
         component_published:
           email_intro: 'Die Komponente «%{resource_title}» wurde für «%{participatory_space_title}» aktiviert. Sie können es auf dieser Seite sehen:'
           notification_title: Die Komponente «%{resource_title}» wurde für «<a href="%{resource_path}">%{participatory_space_title}</a>» aktiviert
       groups: 
+        invited_to_group:
+          email_intro: Ein Administrator der Gruppe <a href="%{resource_url}">%{user_group_name}</a> hat dich eingeladen der Gruppe beizutreten.
+          email_outro: Du hast diese Benachrichtigung erhalten, weil du zu einer Gruppe eingeladen wurdest. Überprüfe den Tab "Gruppen" in deinem Profil, um die Einladung zu akzeptieren.
+          email_subject: Du wurdest eingeladen, der Gruppe %{user_group_name} beizutreten!
+          notification_title: Du wurdest eingeladen, der Gruppe <a href="%{resource_path}">%{user_group_name}</a> beizutreten. Überprüfe den Tab <a href="%{groups_profile_tab_path}">Gruppen</a> in deinem Profil, um die Einladung zu akzeptieren!
         join_request_created:
           email_intro: Es gibt eine neue Beitrittsanfrage für die Gruppe «%{user_group_name}». Du kannst sie auf der <a href="%{resource_url}">Gruppenseite</a> bestätigen.
           email_subject: Es gibt eine neue Beitrittsanfrage für die Gruppe «%{user_group_name}»!
@@ -413,6 +435,9 @@ de:
           follower:
             notification_title: Der Vorschlag «<a href="%{resource_path}">%{resource_title}</a>» wird geprüft.
         proposal_published_for_space:
+          email_intro: Der Vorschlag "%{resource_title}" wurde zu "%{participatory_space_title}" hinzugefügt.
+          email_outro: Du hast diese Benachrichtigung erhalten, weil du "%{participatory_space_title}" folgst. Wenn du diese Nachrichten nicht mehr erhalten möchtest, kannst du sie unter dem angegebenen Link abbestellen.
+          email_subject: Neuer Vorschlag "%{resource_title}" zu %{participatory_space_title}hinzugefügt
           notification_title: Der Vorschlag «<a href="%{resource_path}">%{resource_title}</a>» wurde zu «%{participatory_space_title}» hinzugefügt.
         proposal_rejected:
           follower:
@@ -536,6 +561,11 @@ de:
     menu:
       help: Info & Hilfe
       processes: Mitmachen
+    newsletter_mailer:
+      newsletter:
+        note: Du hast diese E-Mail erhalten, weil du den Quartieridee-Newsletter abonniert hast. Falls du das Gefühl hast, du kriegst zu viele E-Mails von der Quartieridee, kannst du deine Einstellungen auf <a href="%{link}">deiner Benachrichtigungsseite</a> ändern.
+        see_on_website: Falls die E-Mail nicht richtig angezeigt wird, kannst du die Nachricht auf <a href="%{link}" target="_blank">der Webseite</a> anschauen.
+        unsubscribe: Wenn du diese E-Mail nicht mehr erhalten möchtest, kannst du sie <a href="%{link}" target="_blank" class="unsubscribe">hier</a> abbestellen.
     notifications_settings:
       show:
         email_on_notification: Ich möchte jedes Mal eine E-Mail erhalten, wenn ich benachrichtigt werde.
@@ -759,6 +789,9 @@ de:
       already_authenticated: Du bist bereits angemeldet.
     mailer:
       confirmation_instructions:
+        action: Mein Konto bestätigen
+        greeting: Willkommen %{recipient}
+        instruction: 'Du kannst deine Konto-E-Mail über folgenden Link bestätigen:'
         subject: "Quartieridee: E-Mail bestätigen"
       reset_password_instructions:
         action: Mein Passwort ändern
