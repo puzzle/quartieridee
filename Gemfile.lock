@@ -7,6 +7,15 @@ GIT
       rails (>= 5.2)
       redirector
 
+GIT
+  remote: https://github.com/mainio/decidim-module-term_customizer
+  revision: b9248e2abd52b77c7454bfefff9b84a97aae7b35
+  branch: 0.21-stable
+  specs:
+    decidim-term_customizer (0.21.0)
+      decidim-admin (~> 0.21.0)
+      decidim-core (~> 0.21.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -776,6 +785,7 @@ DEPENDENCIES
   decidim (~> 0.21)
   decidim-dev (~> 0.21)
   decidim-proposals (~> 0.21)
+  decidim-term_customizer!
   decidim-url_aliases!
   delayed_job_active_record
   faker (~> 1.9)
