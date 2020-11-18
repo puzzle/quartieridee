@@ -777,6 +777,59 @@ de:
           our_getting_started_guide: Leitfaden für Anfänger
       titles:
         dashboard: Dashboard
+    term_customizer:
+      admin:
+        add_translations:
+          index:
+            add: Hinzufügen
+            help_html: ""
+            help_title: Hilfe
+            search: Suche
+        actions:
+          add_multiple_translations: Mehrere neue Übersetzungen
+          back: Zurück
+          cancel: Abbrechen
+          clear_cache: Cache löschen
+          confirm_duplicate: Kopieren
+          duplicate: Kopieren
+          help: Hilfe
+          import: Import
+          new_translation: Neue Übersetzung
+          new_translation_set: Neues Übersetzungsset
+          view: Anschauen
+        models:
+          translation_sets:
+            fields:
+              name: Übersetzungssets
+          translations:
+            fields:
+              key: Key
+              original_term: Ursprüngliche Übersetzung
+              term: Übersetzung
+        titles:
+          add_multiple_translations: Mehrere neue Übersetzungen
+          translation_sets: Übersetzungssets
+          translations: Übersetzungen
+        translation_sets:
+          constraint_fields:
+            constraint: Einschränkung
+            remove: Entfernen
+          edit:
+            save: Speichern
+            title: Übersetzungsset
+          form:
+            add_constraint: Hinzufügen
+            constraint_help_title: Einschränkung
+            constraint_help_html: ""
+            help_html: ""
+            help_title: Hilfe
+            title: Übersetzungsset
+        translations:
+          index:
+            actions: Aktionen
+            selected: Ausgewählt
+      menu:
+        term_customizer: Term Customizer
     user_interests:
       show:
         my_interests: Meine Themen
