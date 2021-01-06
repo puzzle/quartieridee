@@ -233,4 +233,15 @@ a:hover, .link:hover {
   }
 }
 
+// Fix search button background color
+.topbar__search:not(:focus-within) button#submit {
+  background: inherit;
+  color: black;
+}
+
+.topbar__search:focus-within button#submit {
+  background: inherit;
+  color: black;
+}
+
 // END MODIFICATIONS
