@@ -24,6 +24,9 @@ Decidim.configure do |config|
   # Currency unit
   config.currency_unit = "CHF"
 
+  # Disable the default redirect to https, since we use nginx for ssl termination
+  config.force_ssl = false
+
   # The number of reports which an object can receive before hiding it
   # config.max_reports_before_hiding = 3
 
