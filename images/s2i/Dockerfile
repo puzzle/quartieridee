@@ -8,7 +8,10 @@ RUN bash -c "gem install bundler -v \"$(grep -A 1 'BUNDLED WITH' /opt/app-root/s
 
 RUN \
   set -x && \
-  yum  install -y \
+  yum -y erase git* && \
+  yum -y install https://repo.ius.io/ius-release-el7.rpm && \
+  yum -y install \
+  git-core \
   # for active storage gem
   ImageMagick poppler libpoppler libicu-devel && \
   # Call restore-artifacts sscript when assembling
