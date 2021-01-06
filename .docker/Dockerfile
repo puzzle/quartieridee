@@ -9,7 +9,7 @@
 #
 # Also we don't use -onbuild as they're deprecated
 # https://github.com/docker-library/official-images/issues/2076
-FROM ruby:2.6.3 as dev
+FROM ruby:2.7.1 as dev
 LABEL maintainer="beltrame@puzzle.ch"
 
 # Installs system dependencies
