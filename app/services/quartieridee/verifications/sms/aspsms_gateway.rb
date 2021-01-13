@@ -15,7 +15,7 @@ module Quartieridee
 
         def deliver_code
           return false unless @mobile_phone_number.present?
-          response = Net::HTTP.post(uri, payload, headers)
+          response = Net::HTTP.post(uri, payload)
           response.code == '200' && (JSON(response.body)['StatusCode'] == '1' rescue false)
         end
 
@@ -27,7 +27,8 @@ module Quartieridee
 
         def format_mobile_number(number)
           number = number.gsub(/[^+\d#*]/, '')
-          return number if number.start_with?('+41', '0041')
+          return number if number.start_with? '+41'
+          return '+41' + number[4..-1] if number.start_with? '0041'
           return '+41' + number[1..-1] if number.start_with? '0'
           nil
         end
@@ -45,10 +46,6 @@ module Quartieridee
               "MessageText": translated('sms_text',code: @code, organization: organization_name),
               "AffiliateID": affiliate_id,
           }.compact.to_json
-        end
-
-        def headers
-          { 'Content-Type': 'application/json' }
         end
 
         def user_key
