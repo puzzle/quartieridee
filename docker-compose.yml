@@ -21,6 +21,8 @@ services:
       - RAILS_ENV=development
       - RAILS_MEMCACHED_HOST=cache
       - RAILS_MAIL_DELIVERY_CONFIG=address:mail,port:1025
+    env_file:
+      - .env.local
     ports:
       - 3000:3000
     command: bundle exec puma
