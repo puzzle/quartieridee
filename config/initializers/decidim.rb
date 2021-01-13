@@ -66,7 +66,7 @@ Decidim.configure do |config|
   #   end
   # end
   #
-  # config.sms_gateway_service = "MySMSGatewayService"
+  config.sms_gateway_service = "Quartieridee::Verifications::Sms::AspsmsGateway"
 
   # Timestamp service configuration
   #

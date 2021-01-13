@@ -165,4 +165,9 @@ en:
         description_html: This site uses cookies. By continuing to browse the site, you agree to our use of cookies. We also use Matomo for anonymous user statistics. Find out more about it %{link}.
         link_label: here
         ok: I agree
+  quartieridee:
+    verifications:
+      sms:
+        aspsms_gateway:
+          sms_text: '%{code} is your access code for %{organization}'
   total_budget: Total budget CHF

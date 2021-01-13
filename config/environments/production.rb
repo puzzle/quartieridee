@@ -122,4 +122,10 @@ Rails.application.configure do
   #   :openssl_verify_mode => 'none'
   # }
 
+  config.aspsms = {
+      user_key: ENV['ASPSMS_API_USER_KEY'],
+      password: ENV['ASPSMS_API_PASSWORD'],
+      affiliate_id: ENV['ASPSMS_AFFILIATE_ID']
+  }
+
 end

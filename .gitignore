@@ -37,3 +37,6 @@
 
 # Ignore public uploads
 public/uploads
+
+# Ignore local environment variables file
+/.env.local

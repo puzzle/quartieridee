@@ -890,5 +890,10 @@ de:
         notifications_settings: Benachrichtigungen
         title: Kontoeinstellungen
         user_groups: Gruppen
+  quartieridee:
+    verifications:
+      sms:
+        aspsms_gateway:
+          sms_text: '%{code} ist dein Zugangscode auf %{organization}'
   total_budget: Gesamtbudget CHF
   

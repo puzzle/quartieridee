@@ -46,4 +46,10 @@ Rails.application.configure do
 
   # No precompilation on demand on first request
   config.assets.check_precompiled_asset = false
+
+  config.aspsms = {
+      user_key: ENV['ASPSMS_API_USER_KEY'],
+      password: ENV['ASPSMS_API_PASSWORD'],
+      affiliate_id: ENV['ASPSMS_AFFILIATE_ID']
+  }
 end
