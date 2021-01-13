@@ -43,3 +43,6 @@ public/uploads
 
 # Ignore changed bundle binstub
 bin/bundle
+
+# Ignore local environment variables file
+/.env.local
