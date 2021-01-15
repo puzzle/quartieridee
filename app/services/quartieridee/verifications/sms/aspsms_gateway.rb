@@ -27,9 +27,9 @@ module Quartieridee
 
         def format_mobile_number(number)
           number = number.gsub(/[^+\d#*]/, '')
-          return number if number.start_with? '+41'
-          return '+41' + number[4..-1] if number.start_with? '0041'
-          return '+41' + number[1..-1] if number.start_with? '0'
+          return number if number.start_with?('+41') && number.length == 12
+          return '+41' + number[4..-1] if number.start_with?('0041') && number.length == 13
+          return '+41' + number[1..-1] if number.start_with?('0') && number.length == 10
           nil
         end
 
