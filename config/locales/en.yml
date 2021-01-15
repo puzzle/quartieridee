@@ -30,6 +30,12 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  activemodel:
+    attributes:
+      confirmation:
+        verification_code: Verification code
+      mobile_phone:
+        mobile_phone_number: Mobile phone number
   decidim:
     admin:
       filters:

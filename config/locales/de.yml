@@ -32,6 +32,10 @@
 de:
   activemodel:
     attributes:
+      confirmation:
+        verification_code: Verifizierungscode
+      mobile_phone:
+        mobile_phone_number: Mobiltelefonnummer
       close_meeting:
         proposal_ids: Im Event entstandene Vorschläge
       collaborative_draft:
