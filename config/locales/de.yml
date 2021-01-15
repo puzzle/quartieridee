@@ -899,5 +899,6 @@ de:
       sms:
         aspsms_gateway:
           sms_text: '%{code} ist dein Zugangscode auf %{organization}'
+          sms_originator_max_11_alphabetic_characters: DECIDIM
   total_budget: Gesamtbudget CHF
   

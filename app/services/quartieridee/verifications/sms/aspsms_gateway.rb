@@ -41,7 +41,7 @@ module Quartieridee
           {
               "UserName": user_key,
               "Password": password,
-              "Originator": "DECIDIM",
+              "Originator": translated('sms_originator_max_11_alphabetic_characters'),
               "Recipients": [ @mobile_phone_number ],
               "MessageText": translated('sms_text',code: @code, organization: organization_name),
               "AffiliateID": affiliate_id,
