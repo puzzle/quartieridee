@@ -1,4 +1,11 @@
 GIT
+  remote: https://github.com/Kagemaru/decidim-module-jitsi-meetings.git
+  revision: dbfbe987eef24c7b6791bfdcfe465504a2ccc4e4
+  specs:
+    decidim-jitsi_meetings (0.22.0)
+      decidim-core (= 0.22.0)
+
+GIT
   remote: https://github.com/OpenSourcePolitics/decidim-urlaliases
   revision: f229b405e8e83f5385270b6c7c12651fe01d5d56
   specs:
@@ -800,6 +807,7 @@ DEPENDENCIES
   dalli
   decidim (~> 0.22)
   decidim-dev (~> 0.22)
+  decidim-jitsi_meetings!
   decidim-proposals (~> 0.22)
   decidim-term_customizer!
   decidim-url_aliases!
@@ -817,7 +825,7 @@ DEPENDENCIES
   web-console (~> 3.5)
 
 RUBY VERSION
-   ruby 2.7.1p83
+   ruby 2.6.3p62
 
 BUNDLED WITH
    2.1.4
