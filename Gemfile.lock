@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/Kagemaru/decidim-module-jitsi-meetings.git
-  revision: dbfbe987eef24c7b6791bfdcfe465504a2ccc4e4
+  revision: 5d3e1e4be32ca3b4881d414968211883f38ffde3
   specs:
     decidim-jitsi_meetings (0.22.0)
       decidim-core (= 0.22.0)
@@ -404,7 +404,7 @@ GEM
       faraday-net_http (~> 1.0)
       multipart-post (>= 1.2, < 3)
       ruby2_keywords
-    faraday-net_http (1.0.0)
+    faraday-net_http (1.0.1)
     ffi (1.14.2)
     file_validators (2.3.0)
       activemodel (>= 3.2)
@@ -547,9 +547,9 @@ GEM
     omniauth-oauth (1.1.0)
       oauth
       omniauth (~> 1.0)
-    omniauth-oauth2 (1.7.0)
+    omniauth-oauth2 (1.7.1)
       oauth2 (~> 1.4)
-      omniauth (~> 1.9)
+      omniauth (>= 1.9, < 3)
     omniauth-rails_csrf_protection (0.1.2)
       actionpack (>= 4.2)
       omniauth (>= 1.3.1)
