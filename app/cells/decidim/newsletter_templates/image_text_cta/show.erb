@@ -1,0 +1,69 @@
+<% if organization_primary_color %>
+<style>
+table.button table td {
+  background: <%= organization_primary_color %> !important
+}
+</style>
+<% end %>
+
+<table class="main container">
+  <tr>
+    <td>
+      <table class="spacer">
+        <tbody>
+          <tr>
+            <td height="40px" style="font-size:40px;line-height:40px;"> </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <% if has_main_image? %>
+        <table class="row content image">
+          <tr>
+            <th class="small-12 first columns">
+              <%= main_image %>
+            </th>
+            <th class="expander"></th>
+          </tr>
+        </table>
+      <% end %>
+
+      <table class="row content">
+        <tr>
+          <th class="small-12 first columns">
+            <%= introduction %>
+
+            <% if has_cta? %>
+              <p>&nbsp;</p>
+              <table class="button expanded radius">
+                <tr>
+                  <td>
+                    <table>
+                      <tr>
+                        <td>
+                          <%= link_to cta_text, cta_url, target: :blank %>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+              <p>&nbsp;</p>
+            <% end %>
+
+            <%= body %>
+          </th>
+          <th class="expander"></th>
+        </tr>
+      </table>
+
+      <table class="row">
+        <tr>
+          <th class="small-12 first columns">
+          </th>
+          <th class="expander"></th>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
