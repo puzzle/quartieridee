@@ -48,7 +48,8 @@ jobs:
 
     - name: Install required package
       run: |
-        sudo apt-get install libpq-dev
+        sudo apt-get install libpq-dev libffi-dev
+
     - name: Cache gems
       uses: actions/cache@preview
       with:
@@ -56,6 +57,7 @@ jobs:
         key: ruby-${{ matrix.ruby }}-gem-${{ hashFiles('**/Gemfile.lock') }}
         restore-keys: |
           ruby-${{ matrix.ruby }}-gem-
+
     - name: 'Build and test with Rake'
       env:
         RAILS_TEST_DB_NAME: 'postgres'
