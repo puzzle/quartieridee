@@ -14,8 +14,4 @@ else
   echo "Skipping database initialization because already done on $(cat /db-init/done)"
 fi
 
-# Fix bundler / rubygems / rails bug that causes puma to fail
-# https://github.com/rubygems/rubygems/issues/3279
-bundle binstubs bundler --force
-
 exec "$@"
