@@ -230,7 +230,7 @@ de:
       accountability:
         name: Umsetzungsstand
       add_comment_form:
-        account_message:  <a href="%{sign_in_url}">Melde dich mit deinem Konto an</a> oder <a href="%{sign_up_url}">registriere dich</a>, um diesen Beitrag zu kommentieren.
+        account_message: <a href="%{sign_in_url}">Melde dich mit deinem Konto an</a> oder <a href="%{sign_up_url}">registriere dich</a>, um diesen Beitrag zu kommentieren.
         form:
           body:
             placeholder: Was meinst du dazu?
@@ -370,7 +370,7 @@ de:
         component_published:
           email_intro: 'Die Komponente «%{resource_title}» wurde für «%{participatory_space_title}» aktiviert. Sie können es auf dieser Seite sehen:'
           notification_title: Die Komponente «%{resource_title}» wurde für «<a href="%{resource_path}">%{participatory_space_title}</a>» aktiviert
-      groups: 
+      groups:
         invited_to_group:
           email_intro: Ein Administrator der Gruppe <a href="%{resource_url}">%{user_group_name}</a> hat dich eingeladen der Gruppe beizutreten.
           email_outro: Du hast diese Benachrichtigung erhalten, weil du zu einer Gruppe eingeladen wurdest. Überprüfe den Tab "Gruppen" in deinem Profil, um die Einladung zu akzeptieren.
@@ -839,6 +839,9 @@ de:
         my_interests: Meine Themen
         select_your_interests: Hier kannst du Themen auswählen, die dich interessieren. Du siehst aktuelle Aktivitäten der ausgewählten Themen in der "Zeitleiste" deines Profils.
         update_my_interests: Änderungen speichern
+    export_mailer:
+      data_portability_export:
+        click_button: 'Klicken Sie auf die Schaltfläche "Herunterladen". <br/> Sie haben die Datei bis %{date} verfügbar. <br/> Um die Datei zu öffnen, brauchen Sie <a href=https://www.7-zip.org/>7-Zip</a>. <br/> <br/> Passwort: <br/><code>%{password}</code><br/> <br/>'
   devise:
     confirmations:
       confirmed: Deine E-Mail-Adresse wurde erfolgreich bestätigt.
@@ -901,4 +904,3 @@ de:
           sms_text: '%{code} ist dein Zugangscode auf %{organization}'
           sms_originator_max_11_alphabetic_characters: DECIDIM
   total_budget: Gesamtbudget CHF
-  
