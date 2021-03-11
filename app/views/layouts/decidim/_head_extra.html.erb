@@ -1,28 +1,37 @@
-<% if Rails.env.production? %>
-  <% prod    = ENV.fetch('SENTRY_CURRENT_ENV') == 'production' %>
-  <% site_id = prod ? 2 : 1 %>
-  <% domain  = prod ? '*.quartieridee.ch' : '*.quartieridee.puzzle.ch' %>
-<% end %>
-
 <!-- Matomo -->
-<script type="text/javascript">
-  var _paq = window._paq || [];
+<% if Rails.env.production? %>
+  <%
+    host = current_organization.host
+    domain = "*.#{host}"
 
-  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
-  _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
-  _paq.push(["setCookieDomain", "<%= domain %>"]);
-  _paq.push(["setDomains", ["<%= domain %> "]]);
-  _paq.push(["setDoNotTrack", true]);
-  _paq.push(['trackPageView']);
-  _paq.push(['enableLinkTracking']);
+    site_id = {
+      'quartieridee.puzzle.ch' => 1,
+      'quartieridee.ch' => 2,
+      'stolzehuesli.ch' => 3
+    }[host]
+  %>
 
-  (function() {
-    var u="https://quartieridee-puzzle.matomo.cloud/";
-    _paq.push(['setTrackerUrl', u+'matomo.php']);
-    _paq.push(['setSiteId', '<%= site_id %>']);
-    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-    g.type='text/javascript'; g.async=true; g.defer=true; g.src='//cdn.matomo.cloud/quartieridee-puzzle.matomo.cloud/matomo.js'; s.parentNode.insertBefore(g,s);
-  })();
-</script>
-<noscript><p><img src="https://quartieridee-puzzle.matomo.cloud/matomo.php?idsite=<%= site_id %>&amp;rec=1" style="border:0;" alt="" /></p></noscript>
-<!-- End Matomo Code -->
+  <script type="text/javascript">
+    var _paq = window._paq || [];
+
+    /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+    _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+    _paq.push(["setCookieDomain", "<%= domain %>"]);
+    _paq.push(["setDomains", ["<%= domain %> "]]);
+    _paq.push(["setDoNotTrack", true]);
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+
+    (function() {
+      var u="https://quartieridee-puzzle.matomo.cloud/";
+      _paq.push(['setTrackerUrl', u+'matomo.php']);
+      _paq.push(['setSiteId', '<%= site_id %>']);
+      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+      g.type='text/javascript'; g.async=true; g.defer=true; g.src='//cdn.matomo.cloud/quartieridee-puzzle.matomo.cloud/matomo.js'; s.parentNode.insertBefore(g,s);
+    })();
+  </script>
+  <noscript><p><img src="https://quartieridee-puzzle.matomo.cloud/matomo.php?idsite=<%= site_id %>&amp;rec=1" style="border:0;" alt="" /></p></noscript>
+<% else %>
+  <!-- Disabled in Development and Test -->
+<% end %>
+<!-- /Matomo -->
