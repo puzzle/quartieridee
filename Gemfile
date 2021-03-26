@@ -13,6 +13,7 @@ gem 'decidim-proposals', DECIDIM_VERSION
 gem 'decidim-jitsi_meetings', git: 'https://github.com/Kagemaru/decidim-module-jitsi-meetings.git'
 gem 'decidim-term_customizer', git: 'https://github.com/mainio/decidim-module-term_customizer', branch: 'master'
 gem 'decidim-url_aliases', git: 'https://github.com/OpenSourcePolitics/decidim-urlaliases'
+gem 'decidim-decidim_awesome', '~> 0.6.6'
 
 gem 'bootsnap', '~> 1.3'
 
