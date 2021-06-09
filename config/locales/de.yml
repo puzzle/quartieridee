@@ -32,18 +32,23 @@
 de:
   activemodel:
     attributes:
-      confirmation:
-        verification_code: Verifizierungscode
-      mobile_phone:
-        mobile_phone_number: Mobiltelefonnummer
       close_meeting:
         proposal_ids: Im Event entstandene Vorschläge
       collaborative_draft:
         has_address: Hat einen Standort
         state: Status
-        user_group_id: Unter welchem Namen möchtest du deinen kollaborativen Entwurf veröffentlichen?
+        user_group_id: Unter welchem Namen möchten Sie Ihren kollaborativen Entwurf veröffentlichen?
+      config:
+        intergram_chat_id: Intergram Chat ID
+        intergram_require_login: Nur für eingeloggte Benutzer
+        intergram_use_floating_button: Nach Aktivierung, wird der Chat als Button anstatt als Text angezeigt.
+        intergram_color: Intergram Farben
+        intergram_title_open: Titel bei geöffnetem Intergram
+        intergram_title_closed: Titel bei geschlossenem Intergram
+        intergram_intro_message: Erste Nachricht wenn der Benutzer den Chat zum ersten Mal öffnet
+        intergram_auto_no_response: Eine Nachricht, die eine Minute nach der ersten Nachricht ohne Antwort versendet wird
       debate:
-        user_group_id: Unter welchem Namen möchtest du deine Debatte veröffentlichen?
+        user_group_id: Unter welchem Namen möchten Sie Ihre Debatte veröffentlichen?
       dummy_resource:
         end_date: Ende
         start_date: Beginn
@@ -89,16 +94,12 @@ de:
   decidim:
     account:
       delete:
-        alert: Diese Aktion kann nicht rückgängig gemacht werden. Wenn du dein Konto löschst, kannst du dich mit diesem Konto nicht mehr anmelden und musst dich neu registrieren.
+        alert: Diese Aktion kann nicht rückgängig gemacht werden. Wenn Sie Ihr Konto löschen, können Sie sich mit diesem Konto nicht mehr anmelden und Sie müssen sich neu registrieren.
         confirm:
-          question: Bist du sicher, dass du dein Konto löschen möchtest?
-        explanation: "Optional: Gerne würden wir wissen, wieso du dein Konto löschen möchtest."
+          question: Sind Sie sicher, dass Sie Ihr Konto löschen möchten?
+        explanation: "Optional: Gerne würden wir wissen, wieso Sie Ihr Konto löschen möchten."
       show:
         update_account: Änderungen speichern
-      update:
-        error: Beim Aktualisieren Deines Kontos ist ein Fehler aufgetreten.
-        success: Dein Konto wurde erfolgreich aktualisiert.
-        success_with_email_confirmation: Dein Konto wurde erfolgreich aktualisiert. Du erhältst eine E-Mail zur Bestätigung deiner neuen E-Mail-Adresse.
     accountability:
       models:
         result:
@@ -119,16 +120,16 @@ de:
       admin_terms_of_use:
         accept:
           error: Beim Akzeptieren der Nutzungsbedingungen ist ein Fehler aufgetreten.
-          success: Wunderbar! Du hast die Admin-Nutzungsbedingungen akzeptiert.
+          success: Wunderbar! Sie haben die Admin-Nutzungsbedingungen akzeptiert.
         actions:
           accept: Ich stimme den Nutzungsbedingungen zu
-          are_you_sure: Bist du sicher dass du die Nutzungsbedingungen ablehnen möchtest?
+          are_you_sure: Sind Sie sicher, dass Sie die Nutzungsbedingungen ablehnen möchten?
           refuse: Nutzungsbedingungen ablehnen
           title: Nutzungsbedingungen akzeptieren
         title: Admin Nutzungsbedingungen
         required_review:
           alert: 'Required: Review our admin terms of use'
-          callout: Bitte nimm dir einen Moment Zeit um die Nutzungsbedingungen anzusehen. Ansonsten kannst du die Plattform nicht administrieren.
+          callout: Bitte nehmen Sie sich einen Moment Zeit, um die Nutzungsbedingungen anzusehen. Ansonsten können Sie die Plattform nicht administrieren.
           cta: Jetzt ansehen
       attachments:
         create:
@@ -163,6 +164,7 @@ de:
           attachments: Anhänge
         conferences_submenu:
           attachments: Anhänge
+        decidim_awesome: Decidim Awesome
         participatory_processes_submenu:
           attachments: Anhänge
       models:
@@ -211,17 +213,17 @@ de:
         attachments: Anhänge
       projects:
         budget_confirm:
-          are_you_sure: Bist du einverstanden?
-          description: Folgende Projekte hast du für das Budget ausgewählt.
+          are_you_sure: Sind Sie einverstanden?
+          description: Folgende Projekte haben Sie für das Budget ausgewählt.
         budget_excess:
-          description: Mit deiner Projektauswahl überschreitest du das maximale Budget. Bitte wähle weniger Projekte aus Wenn Sie möchten, können Sie ein Projekt löschen, das Sie bereits ausgewählt haben, oder Sie wählen mit Ihren Einstellungen.
+          description: Mit Ihrer Projektauswahl überschreiten Sie das maximale Budget. Bitte wählen Sie weniger Projekte aus. Wenn Sie andere Projekte auswählen müssen, müssen Sie zuerst bereits ausgewählte Projekte abwählen.
         budget_summary:
-          are_you_sure: Bist du sicher, dass du deine Stimme zurückziehen möchtest?
+          are_you_sure: Sind Sie sicher, dass Sie Ihre Stimme zurückziehen möchten?
           checked_out:
-            description: Du hast für die Verteilung des Budets abgestimmt. Falls du deine Meinung geändert hast, kannst du deine Stimme nochmals löschen und neu anfangen.
+            description: Sie haben für die Verteilung des Budets abgestimmt. Falls Sie Ihre Meinung geändert haben, können Sie die Abstimmung nochmals neu beginnen.
             title: Abstimmung abgeschlossen
-          description: Welche Projekte sollen finanziert werden? Wähle so viele gewünschte Projekte aus, bis das Budget ausgeschöpft ist. Gib mindestens CHF %{minimum_budget}.- aus. Bestätige deine finale Auswahl mit einem Klick auf «Abstimmen».
-          title: Du entscheidest über das Budget
+          description: Welche Projekte sollen finanziert werden? Wählen Sie so viele gewünschte Projekte aus, bis das Budget ausgeschöpft ist. Sie müssen mindestens CHF %{minimum_budget}.- ausgeben. Bestätigen Sie Ihre endgültige Auswahl mit einem Klick auf «Abstimmen».
+          title: Sie entscheiden über das Budget
         order_selected_projects:
           view: Ansehen
         project:
@@ -230,12 +232,12 @@ de:
       accountability:
         name: Umsetzungsstand
       add_comment_form:
-        account_message: <a href="%{sign_in_url}">Melde dich mit deinem Konto an</a> oder <a href="%{sign_up_url}">registriere dich</a>, um diesen Beitrag zu kommentieren.
+        account_message: <a href="%{sign_in_url}">Melden Sie sich mit Ihrem Konto an</a> oder <a href="%{sign_up_url}">registrieren Sie sich</a>, um einen Kommentar hinzuzufügen.
         form:
           body:
-            placeholder: Was meinst du dazu?
+            placeholder: Was meinen Sie dazu?
           user_group_id:
-            label: Kommentiere als
+            label: Kommentieren als
       comment_order_selector:
         order:
           best_rated: Bestbewertet
@@ -249,7 +251,6 @@ de:
           global:
             total_budget: Gesamtbudget CHF
       comment:
-        hide_replies: Antworten verbergen
         report:
           action: Meldung absenden
           description: Wieso ist dieser Inhalt problematisch / unangemessen?
@@ -259,7 +260,8 @@ de:
             offensive: Er ist rassistisch, antisemitisch, sexistisch, homophob oder andersweitig diskriminierend oder bedrohend.
             spam: Er ist offensichtlich Spam, unerwünschte Werbung oder ähnliches.
           title: Problematischen Inhalt melden
-        show_replies: '%{replies_count} Antworten anzeigen'
+      navigation_maps:
+        name: Navigationskarten
       proposals:
         settings:
           global:
@@ -289,7 +291,7 @@ de:
           view: Ansehen
     data_portability:
       show:
-        download_data_description: Hier kannst du alle Daten, die wir von dir gespeichert haben, herunterladen und ansehen. Wir stellen dir einen Link an <strong>%{user_email}</strong> zu.
+        download_data_description: Hier können Sie alle Daten, die wir von Ihnen gespeichert haben, herunterladen und ansehen. Wir stellen Ihnen einen Link an <strong>%{user_email}</strong> zu.
     debates:
       debates:
         debate:
@@ -302,56 +304,88 @@ de:
           fields:
             end_date: Ende
             start_date: Beginn
+    decidim_awesome:
+      admin:
+        config:
+          constraints:
+            add_condition: Einschränkung hinzufügen
+            always: Immer
+            title: Einschränkungen
+          experimental: Experimentell
+          form:
+            help:
+              allow_images_in_full_editor: Bilder im vollen Editor erlauben
+              allow_images_in_markdown_editor: Bilder im Markdown Editor erlauben
+              allow_images_in_small_editor: Bilder in kleinem Editor erlauben
+              drag_and_drop_supported: Drag and Drop unterstützen
+              intergram_about: Über Intergram
+              use_markdown_editor: Markdown Editor benutzen
+              intergram_config: Intergram Konfiguration
+              allow_images_in_proposals: Bilder in Vorschlägen erlauben
+              auto_save_forms: Formulare automatisch speichern
+          show:
+            title: Decidim Awesome
+            update: Aktualisieren
+          rich_text_editor_in_public_views: "Warnung: \"Erweiterter Text Editor für Teilnehmer\" ist aktiviert, diese Option ist inaktiv. Bitte benutzen Sie die Editor Hacks, um Bilder in Vorschlägen zu aktivieren."
+        checks:
+          index:
+            admin_head_tags: Admin Head Tags
+            head_tags: Head Tags
+            title: Checks
+            decidim_version: Decidim Version
+            decidim-admin: decidim-admin
+            decidim-core: decidim-core
+            decidim-proposals: decidim-proposals
+        menu:
+          editors: Editoren
+          surveys: Umfragen
+          proposals: Vorschläge
+          livechat: Live Chat
+          checks: Checks
+      credits: Danksagungen
+      config:
+        intergram:
+          title_open: Lassen Sie uns chatten!
+          title_closed: Klicken um zu chatten!
+          intro_message: Hallo! Wie können wir Ihnen helfen?
+          auto_no_response: Es scheint, dass im Moment niemand verfügbar ist. Bitte sagen Sie uns, wie wir Sie erreichen können und wir melden uns baldmöglichst bei Ihnen.
     devise:
-      failure:
-        unauthenticated: Du musst dich anmelden oder registrieren, bevor du fortfahren kannst.
       omniauth_registrations:
         new:
-          nickname_help: Dein Alias auf "%{organization}". Darf keine Abstände, Umlaute oder Sonderzeichen aufweisen.
-          password_help: "Das Passwort muss mindestens %{minimun_characters} Zeichen lang sein und nicht zu gewöhnlich sein (z.B. 123456). Darf deinen Spitznamen und deine E-Mail nicht enthalten."
-          username_help: Öffentlich sichtbarer Name, der in deinen Beiträgen angezeigt wird. Wenn du lieber anonym bleibst, kannst du auch einen Namen erfinden.
+          nickname_help: Darf keine Abstände, Umlaute oder Sonderzeichen aufweisen.
+          password_help: "Das Passwort muss mindestens %{minimun_characters} Zeichen lang sein. Es darf nicht zu gewöhnlich sein (z. B. 123456) und darf weder Ihren Benutzernamen noch Ihre E-Mail-Adresse enthalten."
+          username_help: Wenn Sie nicht Ihren eigenen Namen angeben möchten, können Sie auch einen erfinden.
       registrations:
         new:
-          already_have_an_account?: Du hast bereits ein Konto?
+          already_have_an_account?: Sie haben bereits ein Konto?
           newsletter: Ich möchte gelegentlich per Newsletter über Neuigkeiten informiert werden.
           newsletter_title: Kontakterlaubnis
-          nickname_help: Dein Alias auf "%{organization}". Darf keine Abstände, Umlaute oder Sonderzeichen aufweisen.
-          password_help: "Das Passwort muss mindestens %{minimun_characters} Zeichen lang sein und nicht zu gewöhnlich sein (z.B. 123456). Darf deinen Spitznamen und deine E-Mail nicht enthalten."
-          subtitle: Registriere dich, um an Diskussionen teilzunehmen und Vorschläge zu unterstützen.
+          nickname_help: Darf keine Abstände, Umlaute oder Sonderzeichen aufweisen.
+          password_help: "Das Passwort muss mindestens %{minimun_characters} Zeichen lang sein. Es darf nicht zu gewöhnlich sein (z. B. 123456) und darf weder Ihren Benutzernamen noch Ihre E-Mail-Adresse enthalten."
+          subtitle: Registrieren Sie sich, um an Beteiligungsprozessen teilzunehmen und Vorschläge einzureichen.
           tos_agreement: Ich stimme den %{link} zu.
-          username_help: Öffentlich sichtbarer Name, der in deinen Beiträgen angezeigt wird. Wenn du lieber anonym bleibst, kannst du auch einen Namen erfinden.
+          username_help: Wenn Sie nicht Ihren eigenen Namen angeben möchten, können Sie auch einen erfinden.
       sessions:
         already_signed_out: Erfolgreich abgemeldet
         signed_out: Erfolgreich abgemeldet
       shared:
         newsletter_modal:
           buttons:
-            check: Kontakterlaubnis erteilen und fortfahren
-            unckeck: Ohne Kontakterlaubnis fortfahren
+            check: Newsletter erhalten
+            unckeck: Newsletter nicht erhalten
           notice: |-
-            <p>Hey, bist du sicher, dass du keinen Newsletter erhalten möchtest?<br>
-            Für uns ist es sehr wichtig, dass wir dich gelegentlich kontaktieren können, um dir wichtige Ankündigungen mitzuteilen - zum Beispiel, wenn wir grosses mit deinen Inputs vorhaben.</p>
-            <p>Falls du dennoch nicht durch weitere Newsletter belästigt werden möchtest, verstehen wir diese Entscheidung natürlich auch. So oder so kannst du diese Entscheidung jederzeit in deinen Kontoeinstellungen unter "Benachrichtigungen" wieder anpassen.</p>
+            <p>Guten Tag! Sind Sie sicher, dass Sie keinen Newsletter erhalten möchten?<br>
+            Für uns ist es sehr wichtig, dass wir Sie gelegentlich kontaktieren können, um Ihnen Neuigkeiten auf der Plattform mitteilen zu können - zum Beispiel, wenn es neue Mitwirkungsprozesse gibt.</p>
+            <p>Falls Sie dennoch nicht durch weitere Newsletter belästigt werden möchten, verstehen wir diese Entscheidung natürlich auch. So oder so können Sie diese Entscheidung jederzeit in Ihren Kontoeinstellungen unter "Benachrichtigungen" wieder anpassen.</p>
             <p>Danke fürs Lesen!</p>
     errors:
       internal_server_error:
-        try_later: Bitte versuche es später nochmal.
+        try_later: Bitte versuchen Sie es später nochmal.
       not_found:
-        content_doesnt_exist: Diese Seite wurde leider nicht gefunden. Entschuldige.
+        content_doesnt_exist: Diese Seite wurde leider nicht gefunden. Wir bitten um Verständnis.
         title: Ups!
     events:
       amendments:
-        amendment_accepted:
-          affected_user:
-            email_intro: 'Eine Änderung wurde für %{amendable_title} vorgeschlagen. Du kannst sie hier überprüfen:'
-            email_outro: Du hast diese Benachrichtigung erhalten, weil du der*die Autor*in in der Idee bist.
-            email_subject: Eine für %{amendable_title} angenommene Änderung von %{emendation_author_nickname}
-            notification_title: Die <a href="%{emendation_path}">Abänderung</a> die durch <a href="%{emendation_author_path}">%{emendation_author_nickname}</a> wurde, wurde für <a href="%{amendable_path}">%{amendable_title}</a>.
-          follower:
-            email_intro: 'Eine Änderung wurde für %{amendable_title} vorgeschlagen. Du kannst sie hier überprüfen:'
-            email_outro: Du hast diese Benachrichtigung erhalten, weil du %{amendable_title} folgst. Du kannst den Erhalt von Benachrichtigungen über den vorherigen Link beenden.
-            email_subject: Eine für %{amendable_title} angenommene Änderung von %{emendation_author_nickname}
-            notification_title: Die <a href="%{emendation_path}">Abänderung</a> die durch <a href="%{emendation_author_path}">%{emendation_author_nickname}</a> wurde, wurde für <a href="%{amendable_path}">%{amendable_title}</a>.
         amendment_created:
           affected_user:
             notification_title: Für die Idee «<a href="%{amendable_path}">%{amendable_title}</a>» wurde eine Änderung vorgeschlagen.
@@ -362,24 +396,17 @@ de:
           email_subject: "%{author_name} hat die Idee «%{resource_title}» kommentiert."
           notification_title: <a href="%{author_path}">%{author_name} %{author_nickname}</a> hat die Idee «<a href="%{resource_path}">%{resource_title}</a>» kommentiert.
         comment_created:
-          email_intro: "Das Thema %{resource_title} wurde kommentiert:"
-          email_outro: Du hast diese Benachrichtigung erhalten, weil du dem Thema "%{resource_title}" oder dem*der Autor*in folgst. Wenn du diese Nachrichten nicht mehr erhalten möchtest, kannst du dich unter dem angegebenen Link abmelden.
-          email_subject: "%{author_name} hat die Idee «%{resourcje_title}» kommentiert."
+          email_subject: "%{author_name} hat die Idee «%{resource_title}» kommentiert."
           notification_title: <a href="%{author_path}">%{author_name} %{author_nickname}</a> hat die Idee «<a href="%{resource_path}">%{resource_title}</a>» kommentiert.
       components:
         component_published:
           email_intro: 'Die Komponente «%{resource_title}» wurde für «%{participatory_space_title}» aktiviert. Sie können es auf dieser Seite sehen:'
           notification_title: Die Komponente «%{resource_title}» wurde für «<a href="%{resource_path}">%{participatory_space_title}</a>» aktiviert
       groups:
-        invited_to_group:
-          email_intro: Ein Administrator der Gruppe <a href="%{resource_url}">%{user_group_name}</a> hat dich eingeladen der Gruppe beizutreten.
-          email_outro: Du hast diese Benachrichtigung erhalten, weil du zu einer Gruppe eingeladen wurdest. Überprüfe den Tab "Gruppen" in deinem Profil, um die Einladung zu akzeptieren.
-          email_subject: Du wurdest eingeladen, der Gruppe %{user_group_name} beizutreten!
-          notification_title: Du wurdest eingeladen, der Gruppe <a href="%{resource_path}">%{user_group_name}</a> beizutreten. Überprüfe den Tab <a href="%{groups_profile_tab_path}">Gruppen</a> in deinem Profil, um die Einladung zu akzeptieren!
         join_request_created:
-          email_intro: Es gibt eine neue Beitrittsanfrage für die Gruppe «%{user_group_name}». Du kannst sie auf der <a href="%{resource_url}">Gruppenseite</a> bestätigen.
+          email_intro: Es gibt eine neue Beitrittsanfrage für die Gruppe «%{user_group_name}». Sie können sie auf der <a href="%{resource_url}">Gruppenseite</a> bestätigen.
           email_subject: Es gibt eine neue Beitrittsanfrage für die Gruppe «%{user_group_name}»!
-          notification_title: Es gibt eine neue Beitrittsanfrage für die Gruppe «%{user_group_name}». Du kannst sie auf der <a href="%{resource_path}">Gruppenseite</a> bestätigen.
+          notification_title: Es gibt eine neue Beitrittsanfrage für die Gruppe «%{user_group_name}». Sie können sie auf der <a href="%{resource_path}">Gruppenseite</a> bestätigen.
       meetings:
         meeting_closed:
           affected_user:
@@ -387,62 +414,59 @@ de:
           follower:
             notification_title: Der Event <a href="%{resource_path}">%{resource_title}</a> wurde geschlossen.
         meeting_registrations_over_percentage:
-          email_intro: Die verfügbaren Slots im Event "%{resource_title}" sind zu über %{percentage}% belegt.
-          email_subject: Die verfügbaren Slots im Event "%{resource_title}" sind zu über %{percentage}% belegt.
+          email_intro: Die verfügbaren Plätze an der Veranstaltung «%{resource_title}» sind zu %{percentage}% belegt.
+          email_subject: Die verfügbaren Plätze an der Veranstaltung «%{resource_title}» sind zu %{percentage}% belegt.
         meeting_updated:
-          email_outro: Sie haben diese Benachrichtigung erhalten, weil Sie den Event "%{resource_title}" verfolgen. Sie können es aus dem vorherigen Link entfernen.
+          email_outro: Sie haben diese Benachrichtigung erhalten, weil Sie der Veranstaltung "%{resource_title}" folgen. Sie können den Empfang von Benachrichtungen über den angegebenen Link steuern.
         registrations_enabled:
-          email_outro: Sie haben diese Benachrichtigung erhalten, weil Sie den Event "%{resource_title}" verfolgen. Sie können es aus dem vorherigen Link entfernen.
+          email_outro: Sie haben diese Benachrichtigung erhalten, weil Sie der Veranstaltung "%{resource_title}" folgen. Sie können den Empfang von Benachrichtungen über den angegebenen Link steuern.
         upcoming_meeting:
-          email_intro: Der Event "%{resource_title}" beginnt in weniger als 48 Stunden.
-          email_outro: Sie haben diese Benachrichtigung erhalten, weil Sie den Event "%{resource_title}" verfolgen. Sie können es aus dem vorherigen Link entfernen.
-          email_subject: Der Event "%{resource_title}" beginnt in weniger als 48 Stunden.
+          email_intro: Die Veranstaltung "%{resource_title}" beginnt in weniger als 48 Stunden.
+          email_outro: Sie haben diese Benachrichtigung erhalten, weil Sie der Veranstaltung "%{resource_title}" folgen. Sie können den Empfang von Benachrichtungen über den angegebenen Link steuern.
+          email_subject: Die Veranstaltung "%{resource_title}" beginnt in weniger als 48 Stunden.
       participatory_process:
         step_activated:
-          notification_title: Die Phase «%{resource_title}» wurde für «<a href="%{resource_path}">%{participatory_space_title}</a>» aktiviert.
+          notification_title: Die Phase «%{resource_title}» wurde für den Mitwirkungsprozess «<a href="%{resource_path}">%{participatory_space_title}</a>» aktiviert.
       proposals:
         collaborative_draft_access_accepted:
           email_intro: '%{requester_name} wurde als Mitwirkende*r beim kollaborativen Entwurf <a href="%{resource_path}">%{resource_title}</a> akzeptiert.'
-          email_outro: Du hast diese Mitteilung erhalten, weil du zum Bearbeiten von <a href="%{resource_path}">%{resource_title}</a> berechtigt bist.
+          email_outro: Sie haben diese Mitteilung erhalten, weil Sie zum Bearbeiten von <a href="%{resource_path}">%{resource_title}</a> berechtigt sind.
           email_subject: "%{requester_name} bei %{resource_title} akzeptiert"
           notification_title: <a href="%{requester_path}">%{requester_name} %{requester_nickname}</a> wurde <strong>als Mitwirkende*r</strong> beim kollaborativen Entwurf <a href="%{resource_path}">%{resource_title}</a> <strong>akzeptiert</strong>.
         collaborative_draft_access_rejected:
           email_intro: '%{requester_name} wurde als Mitwirkende*r beim kollaborativen Entwurf <a href="%{resource_path}">%{resource_title}</a> abgelehnt.'
-          email_outro: Du hast diese Mitteilung erhalten, weil du zum Bearbeiten von <a href="%{resource_path}">%{resource_title}</a> berechtigt bist.
+          email_outro: Sie haben diese Mitteilung erhalten, weil Sie zum Bearbeiten von <a href="%{resource_path}">%{resource_title}</a> berechtigt sind.
           email_subject: "%{requester_name} bei %{resource_title} abgelehnt"
           notification_title: <a href="%{requester_path}">%{requester_name} %{requester_nickname}</a> wurde <strong>als Mitwirkende*r</strong> bei <a href="%{resource_path}">%{resource_title}</a> <strong>abgelehnt</strong>.
         collaborative_draft_access_requested:
           email_intro: '%{requester_name} hat um Zugriff auf deinen kollaborativen Entwurf angefragt. Du kannst den Antrag direkt auf der Entwurfsseite <a href="%{resource_path}">%{resource_title}</a> <strong>annehmen oder ablehnen</strong>.'
-          email_outro: Du hast diese Mitteilung erhalten, weil du zum Bearbeiten von <a href="%{resource_path}">%{resource_title}</a> berechtigt bist.
+          email_outro: Sie haben diese Mitteilung erhalten, weil Sie zum Bearbeiten von <a href="%{resource_path}">%{resource_title}</a> berechtigt sind.
           email_subject: "%{requester_name} möchte bei %{resource_title} mitwirken"
           notification_title: <a href="%{requester_path}">%{requester_name} %{requester_nickname}</a> hat beantragt, beim kollaborativen Entwurf <a href="%{resource_path}">%{resource_title}</a> mitzuwirken. Bitte <strong>akzeptiere</strong> den Antrag oder <strong>lehne ihn ab</strong>.
         collaborative_draft_access_requester_accepted:
-          email_intro: Du wurdest als Mitwirkende*r beim kollaborativen Entwurf <a href="%{resource_path}">%{resource_title}</a> akzeptiert.
-          email_outro: Du hast diese Mitteilung erhalten, weil du angefordert hast, beim kollaborativen Entwurf <a href="%{resource_path}">%{resource_title}</a> mitzuwirken.
+          email_intro: Sie wurden als Mitwirkende*r beim kollaborativen Entwurf <a href="%{resource_path}">%{resource_title}</a> akzeptiert.
+          email_outro: Sie haben diese Mitteilung erhalten, weil Sie angefordert haben, beim kollaborativen Entwurf <a href="%{resource_path}">%{resource_title}</a> mitzuwirken.
           email_subject: Als Mitwirkende*r bei %{resource_title} angenommen
-          notification_title: Du wurdest <strong>als Mitwirkende*r</strong> beim kollaborativen Entwurf <a href="%{resource_path}">%{resource_title}</a> akzeptiert.
+          notification_title: Sie wurden <strong>als Mitwirkende*r</strong> beim kollaborativen Entwurf <a href="%{resource_path}">%{resource_title}</a> akzeptiert.
         collaborative_draft_access_requester_rejected:
-          email_intro: Du wurdest als Mitwirkende*r beim kollaborativen Entwurf <a href="%{resource_path}">%{resource_title}</a> abgelehnt.
-          email_outro: Du hast diese Mitteilung erhalten, weil du angefordert hast, beim kollaborativen Entwurf <a href="%{resource_path}">%{resource_title}</a> mitzuwirken.
+          email_intro: Sie wurden als Mitwirkende*r beim kollaborativen Entwurf <a href="%{resource_path}">%{resource_title}</a> abgelehnt.
+          email_outro: Sie haben diese Mitteilung erhalten, weil Sie angefordert haben, beim kollaborativen Entwurf <a href="%{resource_path}">%{resource_title}</a> mitzuwirken.
           email_subject: Als Mitwirkende*r bei %{resource_title} abgelehnt
-          notification_title: Du wurdest <strong>als Mitwirkende*r</strong> beim kollaborativen Entwurf <a href="%{resource_path}">%{resource_title}</a> <strong>abgelehnt</strong>.
+          notification_title: Sie wurden <strong>als Mitwirkende*r</strong> beim kollaborativen Entwurf <a href="%{resource_path}">%{resource_title}</a> <strong>abgelehnt</strong>.
         collaborative_draft_withdrawn:
           email_intro: <a href="%{author_path}">%{author_name} %{author_nickname}</a> hat den kollaborativen Entwurf <a href="%{resource_path}">%{resource_title}</a> zurückgezogen.
-          email_outro: Du hast diese Mitteilung erhalten, weil du zum Bearbeiten von <a href="%{resource_path}">%{resource_title}</a> berechtigt warst.
+          email_outro: Sie haben diese Mitteilung erhalten, weil Sie zum Bearbeiten von <a href="%{resource_path}">%{resource_title}</a> berechtigt sind.
           email_subject: "Gemeinsamer Entwurf %{resource_title} von %{author_name} %{author_nickname} zurückgezogen."
           notification_title: <a href="%{author_path}">%{author_name} %{author_nickname}</a> hat den kollaborativen Entwurf <a href="%{resource_path}">%{resource_title}</a> <strong>zurückgezogen</strong>.
         proposal_accepted:
           affected_user:
-            email_intro: 'Dein Vorschlag "%{resource_title}" wurde angenommen. Sie können die Antwort auf dieser Seite lesen:'
-            notification_title: Dein Vorschlag <a href="%{resource_path}">%{resource_title}</a> wurde angenommen.
+            email_intro: 'Ihr Vorschlag "%{resource_title}" wurde angenommen. Sie können die Begründung auf folgender Seite nachlesen:'
+            notification_title: Ihr Vorschlag <a href="%{resource_path}">%{resource_title}</a> wurde angenommen.
         proposal_evaluating:
           follower:
-            notification_title: Der Vorschlag «<a href="%{resource_path}">%{resource_title}</a>» wird geprüft.
+            notification_title: Der Vorschlag «<a href="%{resource_path}">%{resource_title}</a>» wird überprüft.
         proposal_published_for_space:
-          email_intro: Der Vorschlag "%{resource_title}" wurde zu "%{participatory_space_title}" hinzugefügt.
-          email_outro: Du hast diese Benachrichtigung erhalten, weil du "%{participatory_space_title}" folgst. Wenn du diese Nachrichten nicht mehr erhalten möchtest, kannst du sie unter dem angegebenen Link abbestellen.
-          email_subject: Neuer Vorschlag "%{resource_title}" zu %{participatory_space_title}hinzugefügt
-          notification_title: Der Vorschlag «<a href="%{resource_path}">%{resource_title}</a>» wurde zu «%{participatory_space_title}» hinzugefügt.
+          notification_title: Der Vorschlag «<a href="%{resource_path}">%{resource_title}</a>» wurde zum Mitwirkungsprozess «%{participatory_space_title}» hinzugefügt.
         proposal_rejected:
           follower:
             notification_title: Der Vorschlag <a href="%{resource_path}">%{resource_title}</a> wurde abgelehnt.
@@ -452,28 +476,28 @@ de:
         project: Projektiert
     follows:
       create:
-        participatory_space: Du folgst bereits %{space_name}
+        participatory_space: Sie folgen bereits dem Mitwirkungsprozess «%{space_name}»
     forms:
       questionnaires:
         show:
           questionnaire_answered:
-            body: Du hast diesen Fragebogen bereits beantwortet.
+            body: Sie haben diesen Fragebogen bereits beantwortet.
             title: ''
-          tos_agreement: 'Mit der Teilnahme stimmst Du folgenden Nutzungsbedingungen zu:'
+          tos_agreement: 'Mit der Teilnahme stimmen Sie folgenden Nutzungsbedingungen zu:'
     gamification:
       badges:
         attended_meetings:
           description: Dieses Abzeichen wird gewährt, wenn Sie mehrere persönliche Events besuchen.
-          description_own: Du hast an %{score} Events teilgenommen.
+          description_own: Sie haben an %{score} Events teilgenommen.
           name: Besuchte Events
-          next_level_in: Nimm an %{score} weiteren Events teil, um das nächste Level zu erreichen!
+          next_level_in: Nehmen Sie an %{score} weiteren Events teil, um das nächste Level zu erreichen!
     groups:
       new:
-        subtitle: Erstelle eine Gruppe und lade andere dazu ein, Teil deiner Gruppe zu sein.
+        subtitle: Erstellen Sie eine Gruppe und laden Sie andere dazu ein, Teil Ihrer Gruppe zu sein.
     help:
       main_topic:
         default_page:
-          content: "<p>In %{organization} kannst du durch die Links im oberen Menü an verschiedenen Themen teilnehmen, Vorschläge erfassen, mitdiskutieren, abstimmen.</p>\n"
+          content: "<p>In %{organization} können Sie durch die Links im oberen Menü an verschiedenen Themen teilnehmen, Vorschläge erfassen, mitdiskutieren, abstimmen.</p>\n"
       participatory_spaces:
         participatory_processes:
           contextual: "<p>Ein <strong>Partizipationsprozess</strong> ist eine Folge von Partizipations-Aktivitäten (z.B. zuerst eine Umfrage ausfüllen, dann Vorschläge machen, diese face-to-face oder in virtuellen Events diskutieren, und sie schliesslich priorisieren) mit dem Ziel, ein bestimmtes Thema zu definieren und darüber zu entscheiden.</p> <p>Beispiele für partizipative Prozesse sind: ein Verfahren zur Wahl von Ausschussmitgliedern (bei dem die Kandidaturen zuerst präsentiert, anschliessend debattiert und schliesslich eine Kandidatur ausgewählt wird), die Bürgerhaushalte (bei denen Vorschläge gemacht, wirtschaftlich bewertet und mit dem verfügbaren Geld abgestimmt werden), ein strategischer Planungsprozess, die gemeinschaftliche Ausarbeitung einer Vorschrift oder Norm, die Gestaltung eines städtischen Raums oder die Erstellung eines öffentlichen Planes.</p>\n"
@@ -541,7 +565,7 @@ de:
           upcoming: Kommende Events
         meetings:
           no_meetings_warning: Keine Veranstaltung entspricht deinen Suchkriterien oder es ist keine Veranstaltung geplant.
-          upcomming_meetings_warning: Momentan sind keine Veranstaltungen geplant. Hier findest du alle vergangenen Veranstaltungen.
+          upcomming_meetings_warning: Momentan sind keine Veranstaltungen geplant. Hier finden Sie alle vergangenen Veranstaltungen.
         meeting_minutes:
           meeting_minutes: Protokolle
         show:
@@ -565,11 +589,46 @@ de:
     menu:
       help: Info & Hilfe
       processes: Mitmachen
-    newsletter_mailer:
-      newsletter:
-        note: Du hast diese E-Mail erhalten, weil du den Quartieridee-Newsletter abonniert hast. Falls du das Gefühl hast, du kriegst zu viele E-Mails von der Quartieridee, kannst du deine Einstellungen auf <a href="%{link}">deiner Benachrichtigungsseite</a> ändern.
-        see_on_website: Falls die E-Mail nicht richtig angezeigt wird, kannst du die Nachricht auf <a href="%{link}" target="_blank">der Webseite</a> anschauen.
-        unsubscribe: Wenn du diese E-Mail nicht mehr erhalten möchtest, kannst du sie <a href="%{link}" target="_blank" class="unsubscribe">hier</a> abbestellen.
+    navigation_maps:
+      admin:
+        areas:
+          create:
+            error: Ein Fehler ist aufgetreten beim Erstellen eines Bereiches
+            success: Bereich erfolgreich erstellt
+          form:
+            no_popup: Verwende kein Popup, verlinke diesen Bereich direkt
+          new:
+            area: Neue Bereichsdetails
+            cancel: Abbrechen
+            save: Speichern
+          show:
+            area: Bereichsdetails
+            cancel: Abbrechen
+            link_suggestions: 'Tipp: Benutze %{map} um auf andere Tabs zu verlinken'
+            save: Speichern
+          update:
+            error: Ein Fehler ist aufgetreten beim Anpassen eines Bereiches
+            success: Bereich erfolgreich gespeichert
+      content_blocks:
+        name: Navigationskarten
+        navigation_map:
+          view: Teilnehmen
+        navigation_map_settings_form:
+          add: Hinzufügen
+          blueprint_image: Bildvorschau
+          description: Beschreibung
+          editor: Karteneditor
+          id: Id
+          image_missing: Bitte fügen Sie ein Bild hinzu.
+          info: Informationen
+          link: Link
+          remove_blueprint: Bild löschen
+          title: Titel
+          type: Art
+          upload_image: Bild hochladen
+      create:
+        error: Fehler beim Erstellen der Karte
+        success: Karte erfolgreich erstellt
     notifications_settings:
       show:
         email_on_notification: Ich möchte jedes Mal eine E-Mail erhalten, wenn ich benachrichtigt werde.
@@ -580,32 +639,32 @@ de:
         send_notifications_by_email: E-Mail Benachrichtigungen
     orders:
       checkout:
-        success: Deine Stimme ist bei uns angekommen. Danke fürs Mitmachen!
+        success: Ihre Stimme ist bei uns angekommen. Danke fürs Mitmachen!
     pages:
       home:
         extended:
-          meetings_explanation: Finde heraus, wo und wann du an öffentlichen Events teilnehmen kannst.
+          meetings_explanation: Finden Sie heraus, wo und wann Sie an öffentlichen Veranstaltungen teilnehmen können.
         footer_sub_hero:
           footer_sub_hero_body: Ideen entwickeln. Diskutieren. Budgetieren.
           footer_sub_hero_headline: '%{organization} - deine lokale Beteiligungsplattform.'
       index:
-        subheading: Hier findest du Fragen und Antworten rund um die «Quartieridee».
+        subheading: Hier finden Sie Fragen und Antworten rund um %{name}.
       terms_and_conditions:
         accept:
-          success: Danke! Du hast die Nutzungsbedingungen akzeptiert.
+          success: Danke! Sie haben die Nutzungsbedingungen akzeptiert.
         form:
           agreement: Zustimmen
           legend: Ich stimme den Nutzungsbedingungen zu
         refuse:
-          modal_body: Solange du sie nicht akzeptierst, wirst du automatisch ausgeloggt und wirst die Plattform nicht mehr nutzen können. Du kannst <a href="%{data_portability_path}">deine persönlichen Daten downloaden</a> und / oder <a href="%{delete_path}">dein Konto löschen</a>.
+          modal_body: Wenn Sie die Nutzungsbedingungen nicht akzeptieren, werden Sie automatisch ausgeloggt und werden die Plattform nicht mehr nutzen können. Sie können <a href="%{data_portability_path}">Ihre persönlichen Daten herunterladen</a> und / oder <a href="%{delete_path}">Ihr Konto löschen</a>.
           modal_btn_continue: Ich möchte die Plattform weiter nutzen und akzeptiere die Bedingungen.
           modal_btn_exit: Ablehnen oder später erinnern.
           modal_button: Ablehnen
-          modal_title: Willst du die aktualisierten Nutzungsbedingungen wirklich nicht akzeptieren?
+          modal_title: Wollen Sie die aktualisierten Nutzungsbedingungen wirklich nicht akzeptieren?
         required_review:
-          alert: Wir haben unsere Nutzungsbedingungen aktualisiert. Bitte überprüfe diese.
-          body: Bitte nimm Dir einen Moment Zeit, um dich über die Aktualisierungen unserer Nutzungsbedingungen zu informieren und diese anzunehmen. Andernfalls kannst du die Plattform nicht mehr nutzen.
-          title: 'Erforderlich: Überprüfe die Aktualisierungen unserer Nutzungsbedingungen'
+          alert: Wir haben unsere Nutzungsbedingungen aktualisiert. Bitte überprüfen Sie diese.
+          body: Bitte nehmen Sie sich einen Moment Zeit, um sich über die Aktualisierungen unserer Nutzungsbedingungen zu informieren und diese anzunehmen. Andernfalls können Sie die Plattform nicht mehr nutzen.
+          title: 'Erforderlich: Überprüfen Sie die Aktualisierungen unserer Nutzungsbedingungen'
     participatory_processes:
       pages:
         home:
@@ -647,7 +706,7 @@ de:
         complete:
           title: Kollaborativen Entwurf vervollständigen
         edit:
-          attachment_legend: (Optional) Du kannst einen Anhang hinzufügen
+          attachment_legend: (Optional) Sie können einen Anhang hinzufügen
           title: Kollaborativen Entwurf bearbeiten
         new:
           title: Kollaborativen Entwurf erstellen
@@ -657,9 +716,9 @@ de:
           label: 'Sortieren nach:'
         show:
           edit: Kollaborativen Entwurf bearbeiten
-          info-message: Dies ist ein <strong>kollaborativer Vorschlags-Entwurf</strong>. Das bedeutet, dass du den Verfasser*innen helfen kannst, die Idee weiter zu entwickeln, indem du unten Kommentare hinzufügst oder direkt Zugriff auf den Entwurf anforderst. Sobald die Verfasser*innen dir Zugriff gewähren, kannst du Änderungen direkt am Entwurf vornehmen.
-          publish_info: Veröffentliche diese Version des Entwurfs oder
-          withdraw: ziehe den Entwurf zurück
+          info-message: Dies ist ein <strong>kollaborativer Vorschlags-Entwurf</strong>. Das bedeutet, dass Sie den Verfasser*innen helfen können, die Idee weiter zu entwickeln, indem Sie unten Kommentare hinzufügen oder direkt Zugriff auf den Entwurf anfordern. Sobald die Verfasser*innen Ihnen Zugriff gewähren, können Sie Änderungen direkt am Entwurf vornehmen.
+          publish_info: Veröffentlichen Sie diese Version des Entwurfs oder
+          withdraw: ziehen Sie den Entwurf zurück
         states:
           open: Offen
         update:
@@ -689,7 +748,7 @@ de:
           voted: Gewählte Vorschläge
         index:
           collaborative_drafts_list: Liste der kollaborativen Entwürfe
-          see_all_withdrawn: Sieh dir alle zurückgezogenen Vorschläge an.
+          see_all_withdrawn: Alle zurückgezogenen Vorschläge anzeigen
         orders:
           most_commented: Anzahl Kommentare
           most_endorsed: Grösste Zustimmung
@@ -699,18 +758,18 @@ de:
           with_more_authors: Von mehreren Autoren erstellt
         preview:
           proposal_edit_before_minutes:
-            one: Du kannst diesen Vorschlag in der ersten Minute nach seiner Veröffentlichung noch unbemerkt bearbeiten. Nach Ablauf dieses Zeitfensters kann der Vorschlag zwar noch verändert werden, aber diese Änderungen werden dann für andere Nutzer*innen stets nachvollziehbar sein.
-            other: Du kannst diesen Vorschlag in den ersten %{count} Minuten nach seiner Veröffentlichung noch unbemerkt bearbeiten. Nach Ablauf dieses Zeitfensters kann der Vorschlag zwar noch verändert werden, aber diese Änderungen werden dann für andere Nutzer*innen stets nachvollziehbar sein.
+            one: Sie können diesen Vorschlag in der ersten Minute nach seiner Veröffentlichung noch unbemerkt bearbeiten. Nach Ablauf dieses Zeitfensters kann der Vorschlag zwar noch verändert werden, aber diese Änderungen werden dann für andere Nutzer*innen stets überprüfbar sein.
+            other: Sie können diesen Vorschlag in den ersten %{count} Minuten nach seiner Veröffentlichung noch unbemerkt bearbeiten. Nach Ablauf dieses Zeitfensters kann der Vorschlag zwar noch verändert werden, aber diese Änderungen werden dann für andere Nutzer*innen stets überprüfbar sein.
         show:
           changes_at_title: Ergänzungen zu "%{title}"
-          link_to_collaborative_draft_help_text: Dieser Vorschlag ist das Ergebnis eines kollaborativen Entwurfs. Vergleiche die älteren Versionen.
+          link_to_collaborative_draft_help_text: Dieser Vorschlag ist das Ergebnis eines kollaborativen Entwurfs. Ältere Versionen vergleichen.
           link_to_collaborative_draft_text: Kollaborativen Entwurf anzeigen
           proposal_in_evaluation_reason: Dieser Vorschlag wird geprüft
           withdraw_confirmation: |
-            Bist du sicher, dass du deinen Vorschlag zurückziehen willst?
-            '(Hinweis: Der Vorschlag wird weiterhin im Archiv der zurückgezogenen Vorschläge auffindbar sind)'
+            Sind Sie sicher, dass Sie Ihren Vorschlag zurückziehen möchten?
+            '(Hinweis: Der Vorschlag wird weiterhin im Archiv der zurückgezogenen Vorschläge auffindbar sein)'
         wizard_aside:
-          info: Du erstellst einen Vorschlag
+          info: Sie erstellen einen Vorschlag
       versions:
         stats:
           back_to_collaborative_draft: Zurück zum kollaborativen Entwurf
@@ -770,7 +829,12 @@ de:
           reference_prefix_hint: Das Referenzpräfix wird zur eindeutigen Identifizierung von Ressourcen in allen Organisationen verwendet
           secondary_hosts_hint: Geben Sie jeden Host auf einer separaten Zeile an
         omniauth_settings:
-          enabled: Omniauth aktiviert
+          enabled: Aktiviert
+          oidc:
+            issuer: Issuer URL (z.B. https://login.integ.stadt-zuerich.ch:443/login/op)
+            client_id: Client ID
+            client_secret: Client secret
+            redirect_url: Redirect URL (z.B. https://my.decidim.domain/users/auth/oidc/callback)
         update:
           error: Beim Bearbeiten dieser Organisation ist ein Fehler aufgetreten.
           success: Die Organisation wurde erfolgreich gespeichert.
@@ -840,54 +904,62 @@ de:
     user_interests:
       show:
         my_interests: Meine Themen
-        select_your_interests: Hier kannst du Themen auswählen, die dich interessieren. Du siehst aktuelle Aktivitäten der ausgewählten Themen in der "Zeitleiste" deines Profils.
+        select_your_interests: Hier können Sie Themen auswählen, die Sie interessieren. Sie sehen aktuelle Aktivitäten der ausgewählten Themen in der "Zeitleiste" Ihres Profils.
         update_my_interests: Änderungen speichern
-    export_mailer:
-      data_portability_export:
-        click_button: 'Klicken Sie auf die Schaltfläche "Herunterladen". <br/> Sie haben die Datei bis %{date} verfügbar. <br/> Um die Datei zu öffnen, brauchen Sie <a href=https://www.7-zip.org/>7-Zip</a>. <br/> <br/> Passwort: <br/><code>%{password}</code><br/> <br/>'
   devise:
     confirmations:
-      confirmed: Deine E-Mail-Adresse wurde erfolgreich bestätigt.
+      confirmed: Ihre E-Mail-Adresse wurde erfolgreich bestätigt.
     failure:
-      already_authenticated: Du bist bereits angemeldet.
+      already_authenticated: Sie sind bereits angemeldet.
     mailer:
       confirmation_instructions:
-        action: Mein Konto bestätigen
-        greeting: Willkommen %{recipient}
-        instruction: 'Du kannst deine Konto-E-Mail über folgenden Link bestätigen:'
-        subject: "Quartieridee: E-Mail bestätigen"
+        subject: "Decidim Zürich: E-Mail bestätigen"
       reset_password_instructions:
         action: Mein Passwort ändern
         greeting: Hallo %{recipient}!
-        instruction: "Jemand hat einen Link angefordert, um dein Passwort zu ändern. Falls du das selbst warst, dann folge diesem Link:"
-        instruction_2: Falls du das nicht selbst warst, kannst du diese E-Mail ignorieren.
-        instruction_3: Dein Passwort ändert sich erst, wenn du auf den obigen Link zugreifst und ein neues Passwort erstellst.
+        instruction: "Jemand hat einen Link angefordert, um Ihr Passwort zu ändern. Falls Sie das selbst waren, folgen Sie diesem Link:"
+        instruction_2: Falls Sie das nicht selbst waren, können Sie diese E-Mail ignorieren.
+        instruction_3: Ihr Passwort ändert sich erst, wenn Sie auf den obigen Link zugreifen und ein neues Passwort erstellen.
         subject: Passwort zurücksetzen
     passwords:
       new:
-        forgot_your_password: Hast du dein Passwort vergessen?
+        forgot_your_password: Haben Sie Ihr Passwort vergessen?
         send_me_reset_password_instructions: Mein Passwort zurücksetzen
-      send_instructions: Wir stellen dir innert wenigen Minuten einen Link zum Zurücksetzen deines Passworts zu.
-      updated: Dein Passwort wurde erfolgreich geändert. Du bist jetzt angemeldet.
-      updated_not_active: Dein Passwort wurde erfolgreich geändert.
-    registrations:
-      signed_up: Herzlich willkommen! Du hast dich erfolgreich angemeldet.
-      updated: Dein Konto wurde erfolgreich aktualisiert.
+      send_instructions: Wir stellen Ihnen innert wenigen Minuten einen Link zum Zurücksetzen Ihres Passworts zu.
+      updated: Ihr Passwort wurde erfolgreich geändert. Sie sind jetzt angemeldet.
+      updated_not_active: Ihr Passwort wurde erfolgreich geändert.
     shared:
       links:
-        forgot_your_password: Hast du dein Passwort vergessen?
-        didn_t_receive_confirmation_instructions: Hast du keine Bestätigungsmail erhalten?
-        didn_t_receive_unlock_instructions: Hast du keine Entsperrungsanweisungen erhalten?
+        sign_in_with_provider: Mit "Mein Konto" anmelden
+        forgot_your_password: Haben Sie Ihr Passwort vergessen?
+        didn_t_receive_confirmation_instructions: Haben Sie keine Bestätigungsmail erhalten?
+        didn_t_receive_unlock_instructions: Haben Sie keine Entsperrungsanweisungen erhalten?
   errors:
     messages:
       too_many_marks: enthält zu viele aufeinanderfolgende Satzzeichen (z.B. "!" und "?")
   hello: "Hallo Welt"
   layouts:
     decidim:
+      admin:
+        decidim_awesome:
+          title: Decidim Awesome
       cookie_warning:
-        description_html: Diese Seite verwendet Cookies. Durch die weitere Verwendung dieser Seite stimmst Du der Verwendung von Cookies zu. Wir verwenden Matomo für anonymisierte Statistiken. Erfahre %{link} mehr darüber.
+        description_html: Diese Seite verwendet Cookies. Durch die weitere Verwendung dieser Seite stimmen Sie der Verwendung von Cookies zu. Wir verwenden Matomo für anonymisierte Statistiken. Erfahren Sie %{link} mehr darüber.
         link_label: hier
         ok: Ich stimme zu
+      decidim_awesome:
+        awesome_config:
+          amendments: Änderungsvorschläge
+          autosaved_error: Automatisches Speichern fehlgeschlagen
+          autosaved_retrieved: Text automatisch wiederhergestellt
+          autosaved_success: Text automatisch gespeichert
+          categories: Kategorien
+          drag_and_drop_image: Drag and Drop Bild
+          meetings: Meetings
+          proposals: Vorschläge
+          hashtags: Hashtags
+          items: Items
+          select_deselect_all: Alles auswählen / Auswahl aufheben
       participatory_process_groups:
         participatory_process_group:
           browse: Durchsuchen
@@ -900,10 +972,19 @@ de:
         notifications_settings: Benachrichtigungen
         title: Kontoeinstellungen
         user_groups: Gruppen
-  quartieridee:
-    verifications:
-      sms:
-        aspsms_gateway:
-          sms_text: '%{code} ist dein Zugangscode auf %{organization}'
-          sms_originator_max_11_alphabetic_characters: DECIDIM
+  time:
+    formats:
+      day_of_month: "%d. %b"
+      day_of_week_long: "%a %e."
+      default: "%a, %d. %b %Y %H:%M:%S %z"
+      devise:
+        mailer:
+          invitation_instructions:
+            accept_until_format: "%d. %B %Y %H:%M"
+      long: "%d. %B %Y %H:%M"
   total_budget: Gesamtbudget CHF
+  forms:
+    length_validator:
+      minimum:
+        one: mindestens %{count} Buchstabe
+        other: mindestens %{count} Buchstaben
